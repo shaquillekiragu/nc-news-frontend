@@ -26,4 +26,18 @@ export function getArticle(id) {
   });
 }
 
+export function getCommentsByArticleId(id) {
+  return fetch(
+    `https://news-webpage-project.onrender.com/api/articles/${id}/comments`
+  ).then((response) => {
+    if (!response.ok) {
+      return Promise.reject({
+        status: response.status,
+        message: response.statusText,
+      });
+    }
+    return response.json();
+  });
+}
+
 export default getArticles;
