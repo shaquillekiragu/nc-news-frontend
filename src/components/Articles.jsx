@@ -1,20 +1,12 @@
 import { useState, useEffect } from "react";
+import getArticles from "../api";
 import ArticleCard from "./ArticleCard";
 
 function Articles() {
   const [articlesList, setArticlesList] = useState([]);
 
   useEffect(() => {
-    fetch("https://news-webpage-project.onrender.com/api/articles")
-      .then((response) => {
-        if (!response.ok) {
-          return Promise.reject({
-            status: response.status,
-            message: response.statusText,
-          });
-        }
-        return response.json();
-      })
+    getArticles()
       .then((data) => {
         setArticlesList(data.articles);
       })
