@@ -1,16 +1,14 @@
 import { useState, useEffect } from "react";
 import { getCommentsByArticleId } from "../api";
-import { useParams } from "react-router-dom";
 import CommentCard from "./CommentCard";
 
-function Comments() {
-  const { id } = useParams();
+function Comments({ id }) {
   const [commentsList, setCommentsList] = useState([]);
 
   useEffect(() => {
     getCommentsByArticleId(id)
-      .then((data) => {
-        setCommentsList(data.comments);
+      .then((response) => {
+        setCommentsList(response.data.comments);
       })
       .catch((err) => {
         console.log(err);
@@ -19,7 +17,7 @@ function Comments() {
 
   return (
     <>
-      <h2>Comments</h2>
+      <h2>Comments:</h2>
       <ul>
         {commentsList.map((comment) => {
           return (
