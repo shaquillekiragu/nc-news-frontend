@@ -1,43 +1,29 @@
+import axios from "axios";
+
 function getArticles() {
-  return fetch("https://news-webpage-project.onrender.com/api/articles").then(
-    (response) => {
-      if (!response.ok) {
-        return Promise.reject({
-          status: response.status,
-          message: response.statusText,
-        });
-      }
-      return response.json();
-    }
-  );
+  return axios.get("https://news-webpage-project.onrender.com/api/articles");
 }
 
 export function getArticle(id) {
-  return fetch(
+  return axios.get(
     `https://news-webpage-project.onrender.com/api/articles/${id}`
-  ).then((response) => {
-    if (!response.ok) {
-      return Promise.reject({
-        status: response.status,
-        message: response.statusText,
-      });
-    }
-    return response.json();
-  });
+  );
+}
+
+export function patchDownvote(id, inc_votes) {
+  return axios
+    .patch(`https://news-webpage-project.onrender.com/api/articles/${id}`, {
+      inc_votes: inc_votes,
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 }
 
 export function getCommentsByArticleId(id) {
-  return fetch(
+  return axios.get(
     `https://news-webpage-project.onrender.com/api/articles/${id}/comments`
-  ).then((response) => {
-    if (!response.ok) {
-      return Promise.reject({
-        status: response.status,
-        message: response.statusText,
-      });
-    }
-    return response.json();
-  });
+  );
 }
 
 export default getArticles;
