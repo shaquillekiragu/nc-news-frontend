@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getArticle, patchDownvote } from "../api";
+import { getArticle, patchVoteCount } from "../api";
 import Comments from "./Comments";
+import Loading from "./Loading";
 
 function ViewArticle() {
   const { id } = useParams();
@@ -35,7 +36,9 @@ function ViewArticle() {
       }
       return currentVoteCount;
     });
-    patchDownvote(id, inc_votes);
+    patchVoteCount(id, inc_votes).catch((err) => {
+      console.log(err);
+    });
   }
   function handleDownvoteClick(event) {
     event.preventDefault();
@@ -47,11 +50,13 @@ function ViewArticle() {
       }
       return currentVoteCount;
     });
-    patchDownvote(id, inc_votes);
+    patchVoteCount(id, inc_votes).catch((err) => {
+      console.log(err);
+    });
   }
 
   if (isLoading) {
-    return <p>Article loading...</p>;
+    return <Loading page={"Article"} />;
   }
   return (
     <>

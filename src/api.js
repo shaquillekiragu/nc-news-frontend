@@ -10,14 +10,17 @@ export function getArticle(id) {
   );
 }
 
-export function patchDownvote(id, inc_votes) {
-  return axios
-    .patch(`https://news-webpage-project.onrender.com/api/articles/${id}`, {
+export function getUsers() {
+  return axios.get("https://news-webpage-project.onrender.com/api/users");
+}
+
+export function patchVoteCount(id, inc_votes) {
+  return axios.patch(
+    `https://news-webpage-project.onrender.com/api/articles/${id}`,
+    {
       inc_votes: inc_votes,
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+    }
+  );
 }
 
 export function getCommentsByArticleId(id) {
@@ -25,5 +28,11 @@ export function getCommentsByArticleId(id) {
     `https://news-webpage-project.onrender.com/api/articles/${id}/comments`
   );
 }
+
+// export function postCommentByArticleId(id) {
+//   return axios.post(
+//     `https://news-webpage-project.onrender.com/api/articles/${id}/comments`
+//   );
+// }
 
 export default getArticles;

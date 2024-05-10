@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import getArticles from "../api";
 import ArticleCard from "./ArticleCard";
+import Loading from "./Loading";
 
 function Articles() {
   const [articlesList, setArticlesList] = useState([]);
@@ -18,7 +19,7 @@ function Articles() {
   }, []);
 
   if (isLoading) {
-    return <p>Articles loading...</p>;
+    return <Loading page={"Articles"} />;
   }
   return (
     <>

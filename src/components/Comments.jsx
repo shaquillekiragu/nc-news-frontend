@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getCommentsByArticleId } from "../api";
 import CommentCard from "./CommentCard";
+import PostComment from "./PostComment";
 
 function Comments({ id }) {
   const [commentsList, setCommentsList] = useState([]);
@@ -18,6 +19,7 @@ function Comments({ id }) {
   return (
     <>
       <h2>Comments:</h2>
+      <PostComment id={id} />
       <ul>
         {commentsList.map((comment) => {
           return (
@@ -27,6 +29,7 @@ function Comments({ id }) {
           );
         })}
       </ul>
+      <br />
     </>
   );
 }
