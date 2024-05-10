@@ -9,3 +9,8 @@ img {
   width: 500px;
   height: auto;
 }
+
+#invalid-msg {
+  color: red;
+  visibility: hidden;
+}

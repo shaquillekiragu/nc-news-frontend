@@ -1,20 +1,21 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getArticle, patchDownvote } from "../api";
+import { getArticle, patchVoteCount } from "../api";
 import Comments from "./Comments";
+import Loading from "./Loading";
 
 function ViewArticle() {
-  const { id } = useParams();
+  const { article_id } = useParams();
   const [article, setArticle] = useState([]);
   const [voteCount, setVoteCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
-  if (id === undefined) {
+  if (article_id === undefined) {
     console.log("Invalid article id");
   }
 
   useEffect(() => {
-    getArticle(id)
+    getArticle(article_id)
       .then((response) => {
         setArticle(response.data.article);
         setVoteCount(response.data.article.votes);
@@ -35,7 +36,9 @@ function ViewArticle() {
       }
       return currentVoteCount;
     });
-    patchDownvote(id, inc_votes);
+    patchVoteCount(article_id, inc_votes).catch((err) => {
+      console.log(err);
+    });
   }
   function handleDownvoteClick(event) {
     event.preventDefault();
@@ -47,11 +50,13 @@ function ViewArticle() {
       }
       return currentVoteCount;
     });
-    patchDownvote(id, inc_votes);
+    patchVoteCount(article_id, inc_votes).catch((err) => {
+      console.log(err);
+    });
   }
 
   if (isLoading) {
-    return <p>Article loading...</p>;
+    return <Loading page={"Article"} />;
   }
   return (
     <>
@@ -69,7 +74,7 @@ function ViewArticle() {
       <p>Created: {article.created_at}</p>
       <p>Comments: {article.comment_count}</p>
       <br />
-      <Comments id={id} />
+      <Comments article_id={article_id} />
     </>
   );
 }
