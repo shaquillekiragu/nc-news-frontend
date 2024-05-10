@@ -5,17 +5,17 @@ import Comments from "./Comments";
 import Loading from "./Loading";
 
 function ViewArticle() {
-  const { id } = useParams();
+  const { article_id } = useParams();
   const [article, setArticle] = useState([]);
   const [voteCount, setVoteCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
-  if (id === undefined) {
+  if (article_id === undefined) {
     console.log("Invalid article id");
   }
 
   useEffect(() => {
-    getArticle(id)
+    getArticle(article_id)
       .then((response) => {
         setArticle(response.data.article);
         setVoteCount(response.data.article.votes);
@@ -36,7 +36,7 @@ function ViewArticle() {
       }
       return currentVoteCount;
     });
-    patchVoteCount(id, inc_votes).catch((err) => {
+    patchVoteCount(article_id, inc_votes).catch((err) => {
       console.log(err);
     });
   }
@@ -50,7 +50,7 @@ function ViewArticle() {
       }
       return currentVoteCount;
     });
-    patchVoteCount(id, inc_votes).catch((err) => {
+    patchVoteCount(article_id, inc_votes).catch((err) => {
       console.log(err);
     });
   }
@@ -74,7 +74,7 @@ function ViewArticle() {
       <p>Created: {article.created_at}</p>
       <p>Comments: {article.comment_count}</p>
       <br />
-      <Comments id={id} />
+      <Comments article_id={article_id} />
     </>
   );
 }

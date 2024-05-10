@@ -1,25 +1,31 @@
 import { useState, useEffect } from "react";
-import { getCommentsByArticleId } from "../api";
+import { getComments } from "../api";
 import CommentCard from "./CommentCard";
 import PostComment from "./PostComment";
+import Loading from "./Loading";
 
-function Comments({ id }) {
+function Comments({ article_id }) {
   const [commentsList, setCommentsList] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getCommentsByArticleId(id)
+    getComments(article_id)
       .then((response) => {
         setCommentsList(response.data.comments);
+        setIsLoading(false);
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
 
+  if (isLoading) {
+    return <Loading page={"Comments"} />;
+  }
   return (
     <>
       <h2>Comments:</h2>
-      <PostComment id={id} />
+      <PostComment article_id={article_id} />
       <ul>
         {commentsList.map((comment) => {
           return (

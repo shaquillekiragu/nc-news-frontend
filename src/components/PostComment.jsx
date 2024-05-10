@@ -1,47 +1,29 @@
-import { getCommentsByArticleId } from "../api";
-import { useState, useEffect } from "react";
-import { useContext } from "react";
-import { UsernameContext } from "../contexts/LoginContext";
+import { postComment } from "../api";
+import { useState } from "react";
 
-function PostComment({ id }) {
-  const { username, setUsername } = useContext(UsernameContext);
-  console.log(username, "username");
-  const [commentsIdList, setCommentsIdList] = useState([]);
+function PostComment({ article_id }) {
+  const [postedBody, setPostedBody] = useState("");
+  const [currentInput, setCurrentInput] = useState("");
 
-  useEffect(() => {
-    getCommentsByArticleId(id).then((response) => {
-      const arr = response.data.comments;
-      const newArr = arr.map((comment) => {
-        return comment.comment_id;
-      });
-      setCommentsIdList(newArr);
-    });
-  }, []);
-
-  let comm_id = 1;
-  for (let i = 1; !commentsIdList.includes(i); i++) {
-    comm_id = i;
-  }
-  const newComment = {};
+  // I'm currently hardcoding in the username below, but I will refactor to implement useContext to have the user set the username in the login page on a later ticket because of time.
+  const username = "cooljmessy";
 
   function handleChange(event) {
     event.preventDefault();
-    newComment.body = event.target.value;
+    setCurrentInput(event.target.value);
+    console.log(currentInput, "currentInput");
   }
 
-  function handleClick(event) {
+  function handleSubmit(event) {
     event.preventDefault();
-    newComment.comment_id = comm_id;
-    newComment.votes = 0;
-    newComment.created_at = 0;
-    newComment.author = username;
-    newComment.article_id = id;
-    console.log(newComment, "newComment");
+    setPostedBody(currentInput);
+    console.log(postedBody, "postedBody");
+    postComment(article_id, username, postedBody);
   }
 
   return (
     <>
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <label htmlFor="body">Comment: </label>
         <input
           id="body"
@@ -50,9 +32,7 @@ function PostComment({ id }) {
           onChange={handleChange}
           required
         ></input>
-        <button type="submit" onClick={handleClick}>
-          Post comment
-        </button>
+        <button type="submit">Post comment</button>
       </form>
     </>
   );

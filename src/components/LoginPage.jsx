@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import { useContext } from "react";
 import { UsernameContext } from "../contexts/LoginContext";
 import { getUsers } from "../api";
+import Loading from "./Loading";
 
 function LoginPage() {
   const { username, setUsername } = useContext(UsernameContext);
   const [password, setPassword] = useState("");
   const [users, setUsers] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const invalidMsg = document.getElementById("invalid-msg");
 
@@ -14,6 +16,7 @@ function LoginPage() {
     getUsers()
       .then((response) => {
         setUsers(response.data.users);
+        setIsLoading(false);
       })
       .catch((err) => {
         console.log(err);
@@ -38,6 +41,9 @@ function LoginPage() {
     setPassword(event.target.value);
   }
 
+  if (isLoading) {
+    return <Loading page={"Login page"} />;
+  }
   return (
     <>
       <p>
