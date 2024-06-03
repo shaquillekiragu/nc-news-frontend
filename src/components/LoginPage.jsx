@@ -48,7 +48,7 @@ function LoginPage() {
     <>
       <p>
         Welcome to Reddit News! Because, you know, the world definitely needed
-        another groundbreaking social network. Originality at its finest!
+        another groundbreaking social network...
       </p>
       <h3>Login:</h3>
       <form action="/articles" onSubmit={handleSubmit}>

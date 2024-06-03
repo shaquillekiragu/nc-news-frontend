@@ -4,6 +4,8 @@ import { useState } from "react";
 function PostComment({ article_id }) {
   const [postedBody, setPostedBody] = useState("");
   const [currentInput, setCurrentInput] = useState("");
+  const [hasPosted, setHasPosted] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   // I'm currently hardcoding in the username below, but I will refactor to implement useContext to have the user set the username in the login page on a later ticket because of time.
   const username = "cooljmessy";
@@ -17,10 +19,17 @@ function PostComment({ article_id }) {
   function handleSubmit(event) {
     event.preventDefault();
     setPostedBody(currentInput);
+    setHasPosted(true);
     console.log(postedBody, "postedBody");
-    postComment(article_id, username, postedBody);
+    postComment(article_id, username, postedBody).then(() => {
+      setIsLoading(false);
+      setHasPosted(false);
+    });
   }
 
+  if (isLoading && hasPosted) {
+    return <p>Posting comment...</p>;
+  }
   return (
     <>
       <form onSubmit={handleSubmit}>
