@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useContext } from "react";
 import { UsernameContext } from "../contexts/LoginContext";
 import { getUsers } from "../api";
-import Loading from "./Loading";
+import Loading from "../components/Loading";
 
 function LoginPage() {
   const { username, setUsername } = useContext(UsernameContext);
@@ -48,7 +48,7 @@ function LoginPage() {
     <>
       <p>
         Welcome to Reddit News! Because, you know, the world definitely needed
-        another groundbreaking social network. Originality at its finest!
+        another groundbreaking social network...
       </p>
       <h3>Login:</h3>
       <form action="/articles" onSubmit={handleSubmit}>

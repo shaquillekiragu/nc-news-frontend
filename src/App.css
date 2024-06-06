@@ -14,3 +14,7 @@ img {
   color: red;
   visibility: hidden;
 }
+
+#delete-button {
+  visibility: hidden;
+}
