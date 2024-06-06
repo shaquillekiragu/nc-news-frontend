@@ -2,10 +2,10 @@ import { UsernameProvider } from "./contexts/LoginContext.jsx";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
-import LoginPage from "./components/LoginPage";
-import Articles from "./components/Articles";
-import ViewArticle from "./components/ViewArticle";
-import ViewComment from "./components/ViewComment";
+import LoginPage from "./pages/LoginPage";
+import Articles from "./pages/Articles";
+import ViewArticle from "./pages/ViewArticle";
+import ViewComment from "./pages/ViewComment";
 
 function App() {
   return (

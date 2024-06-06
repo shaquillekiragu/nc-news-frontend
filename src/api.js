@@ -1,7 +1,6 @@
 import axios from "axios";
 
 function getArticles(urlStr) {
-  console.log(urlStr, "urlStr");
   return axios.get(urlStr);
 }
 

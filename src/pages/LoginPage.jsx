@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useContext } from "react";
 import { UsernameContext } from "../contexts/LoginContext";
 import { getUsers } from "../api";
-import Loading from "./Loading";
+import Loading from "../components/Loading";
 
 function LoginPage() {
   const { username, setUsername } = useContext(UsernameContext);
