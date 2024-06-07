@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getArticle, patchVoteCount } from "../api";
-import Comments from "./Comments";
-import Loading from "./Loading";
+import Comments from "../components/Comments";
+import Loading from "../components/Loading";
 
 function ViewArticle() {
   const { article_id } = useParams();

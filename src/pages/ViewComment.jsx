@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getComment } from "../api";
-import Loading from "./Loading";
-import DeleteComment from "./DeleteComment";
+import Loading from "../components/Loading";
+import DeleteComment from "../components/DeleteComment";
 
 function ViewComment({ article_id }) {
   const { comment_id } = useParams();

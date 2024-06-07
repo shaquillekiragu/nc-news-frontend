@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 import getArticles from "../api";
 import FilterByTopic from "../components/FilterByTopic";
 import SortArticles from "../components/SortArticles";
@@ -54,7 +54,9 @@ function Articles() {
   }
   return (
     <>
-      <h2>Articles</h2>
+      <Link to="/articles">
+        <h2>Articles</h2>
+      </Link>
       <FilterByTopic handleTopicChange={handleTopicChange} />
       <br />
       <SortArticles handleSortChange={handleSortChange} />
