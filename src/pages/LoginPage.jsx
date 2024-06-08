@@ -28,6 +28,10 @@ function LoginPage() {
     setUsername(event.target.value);
   }
 
+  function handlePasswordChange(event) {
+    setPassword(event.target.value);
+  }
+
   const invalidMsg = document.getElementById("invalid-msg");
 
   function handleSubmit(event) {
@@ -36,19 +40,15 @@ function LoginPage() {
     });
     if (isValidUsername) {
       event.preventDefault();
-      setAuthUser(username);
+      setAuthUser({ username: username });
       setIsLoggedIn(true);
-      console.log(authUser, "authUser 2");
-      console.log(isLoggedIn, "isLoggedIn 2");
+      console.log(authUser, "authUser");
+      console.log(isLoggedIn, "isLoggedIn");
       navigate("/articles");
     } else {
       event.preventDefault();
       invalidMsg.style.visibility = "visible";
     }
-  }
-
-  function handlePasswordChange(event) {
-    setPassword(event.target.value);
   }
 
   if (isLoading) {

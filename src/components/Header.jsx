@@ -7,7 +7,7 @@ function Header() {
 
   function handleClick(event) {
     event.preventDefault();
-    setAuthUser("");
+    setAuthUser({});
     setIsLoggedIn(false);
     navigate("/");
   }
@@ -16,12 +16,16 @@ function Header() {
     return (
       <>
         <h1>Reddit News</h1>
-        <p>User logged in: {authUser}</p>
+        <p>User logged in: {authUser.username}</p>
         <button onClick={handleClick}>Log Out</button>
       </>
     );
   }
-  return <h1>Reddit News</h1>;
+  return (
+    <>
+      <h1>Reddit News</h1>
+    </>
+  );
 }
 
 export default Header;

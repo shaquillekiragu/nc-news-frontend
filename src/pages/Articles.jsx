@@ -54,9 +54,9 @@ function Articles() {
   }
   return (
     <>
-      <Link to="/articles">
-        <h2>Articles</h2>
-      </Link>
+      {/* <Link to="/articles"> */}
+      <h2>Articles</h2>
+      {/* </Link> */}
       <FilterByTopic handleTopicChange={handleTopicChange} />
       <br />
       <SortArticles handleSortChange={handleSortChange} />

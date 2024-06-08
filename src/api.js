@@ -24,6 +24,14 @@ export function getComments(article_id) {
 
 // POST:
 
+export function postUser(username, name, avatar_url) {
+  return axios.post(`https://news-webpage-project.onrender.com/api/users`, {
+    username,
+    name,
+    avatar_url,
+  });
+}
+
 export function postComment(article_id, username, postedBody) {
   return axios.post(
     `https://news-webpage-project.onrender.com/api/articles/${article_id}/comments`,

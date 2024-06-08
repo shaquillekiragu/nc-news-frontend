@@ -7,7 +7,7 @@ export function useAuth() {
 }
 
 export default function UserProvider({ children }) {
-  const [authUser, setAuthUser] = useState("");
+  const [authUser, setAuthUser] = useState({});
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const value = {

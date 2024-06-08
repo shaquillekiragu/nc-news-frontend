@@ -20,10 +20,14 @@ function PostComment({ article_id }) {
     setPostedBody(currentInput);
     setHasPosted(true);
     console.log(postedBody, "postedBody");
-    postComment(article_id, username, postedBody).then(() => {
-      setIsLoading(false);
-      setHasPosted(false);
-    });
+    postComment(article_id, username, postedBody)
+      .then(() => {
+        setIsLoading(false);
+        setHasPosted(false);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   if (isLoading && hasPosted) {
