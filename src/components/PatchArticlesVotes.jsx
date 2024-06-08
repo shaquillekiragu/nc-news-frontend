@@ -1,6 +1,9 @@
+import { useAuth } from "../contexts/UserContext";
 import { patchVoteCount } from "../api";
 
 function PatchArticleVotes({ setVoteCount, article, article_id }) {
+  const { authUser, setAuthUser, isLoggedIn, setIsLoggedIn } = useAuth();
+
   function handleUpvoteClick(event) {
     event.preventDefault();
     let inc_votes = 0;
@@ -30,15 +33,16 @@ function PatchArticleVotes({ setVoteCount, article, article_id }) {
       console.log(err);
     });
   }
-
-  return (
-    <>
-      <form action="">
-        <button onClick={handleUpvoteClick}>Upvote</button>
-        <button onClick={handleDownvoteClick}>Downvote</button>
-      </form>
-    </>
-  );
+  if (authUser.username !== article.author) {
+    return (
+      <>
+        <form action="">
+          <button onClick={handleUpvoteClick}>Upvote</button>
+          <button onClick={handleDownvoteClick}>Downvote</button>
+        </form>
+      </>
+    );
+  }
 }
 
 export default PatchArticleVotes;

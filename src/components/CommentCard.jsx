@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { useAuth } from "../contexts/UserContext";
 import { patchCommentVoteCount } from "../api";
 import DeleteComment from "./DeleteComment";
 
 function CommentCard({ comment }) {
   const [commentVoteCount, setCommentVoteCount] = useState(0);
-  const username = "cooljmessy";
+  const { authUser, setAuthUser, isLoggedIn, setIsLoggedIn } = useAuth();
 
   function handleCommentUpvoteClick(event) {
     event.preventDefault();
@@ -36,7 +37,7 @@ function CommentCard({ comment }) {
     });
   }
 
-  if (username === comment.author) {
+  if (authUser.username === comment.author) {
     return (
       <section>
         <br />

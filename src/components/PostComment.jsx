@@ -1,5 +1,6 @@
-import { postComment } from "../api";
 import { useState } from "react";
+import { useAuth } from "../contexts/UserContext";
+import { postComment } from "../api";
 
 function PostComment({ article_id }) {
   const [postedBody, setPostedBody] = useState("");
@@ -7,7 +8,7 @@ function PostComment({ article_id }) {
   const [hasPosted, setHasPosted] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  const username = "cooljmessy";
+  const { authUser, setAuthUser, isLoggedIn, setIsLoggedIn } = useAuth();
 
   function handleChange(event) {
     event.preventDefault();
@@ -20,7 +21,7 @@ function PostComment({ article_id }) {
     setPostedBody(currentInput);
     setHasPosted(true);
     console.log(postedBody, "postedBody");
-    postComment(article_id, username, postedBody)
+    postComment(article_id, authUser.username, postedBody)
       .then(() => {
         setIsLoading(false);
         setHasPosted(false);

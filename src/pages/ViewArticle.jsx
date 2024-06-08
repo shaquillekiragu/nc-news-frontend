@@ -44,7 +44,7 @@ function ViewArticle() {
         article={article}
         article_id={article_id}
       />
-      <p>Created: {article.created_at}</p>
+      <p>Created at: {article.created_at}</p>
       <Comments article_id={article_id} />
     </>
   );

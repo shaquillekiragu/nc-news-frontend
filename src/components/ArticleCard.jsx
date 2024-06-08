@@ -12,7 +12,7 @@ function ArticleCard({ article }) {
       <br />
       <img src={article.article_img_url} alt="Article thumbnail" />
       <p>Votes: {article.votes}</p>
-      <p>Created: {article.created_at}</p>
+      <p>Created at: {article.created_at}</p>
       <p>Comments: {article.comment_count}</p>
       <br />
     </section>
