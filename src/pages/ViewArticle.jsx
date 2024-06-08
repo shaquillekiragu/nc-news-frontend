@@ -24,7 +24,7 @@ function ViewArticle() {
       .catch((err) => {
         console.log(err);
       });
-  }, [article]);
+  }, [article.comment_count]);
 
   function handleUpvoteClick(event) {
     event.preventDefault();
@@ -40,6 +40,7 @@ function ViewArticle() {
       console.log(err);
     });
   }
+
   function handleDownvoteClick(event) {
     event.preventDefault();
     let inc_votes = 0;

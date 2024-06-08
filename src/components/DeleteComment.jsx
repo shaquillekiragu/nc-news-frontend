@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { deleteComment } from "../api";
 
 function DeleteComment({ comment }) {
@@ -6,18 +6,18 @@ function DeleteComment({ comment }) {
 
   function handleClick(event) {
     event.preventDefault();
-    if (!isDeleted) {
-      console.log(comment.comment_id, "comment_id");
-      deleteComment(comment.comment_id);
-      setIsDeleted(true);
-    }
+    console.log(comment.comment_id, "comment_id");
+    deleteComment(comment.comment_id);
+    setIsDeleted(true);
   }
 
-  return (
-    <form action="">
-      <button onClick={handleClick}>Delete comment</button>
-    </form>
-  );
+  if (!isDeleted) {
+    return (
+      <form action="">
+        <button onClick={handleClick}>Delete comment</button>
+      </form>
+    );
+  }
 }
 
 export default DeleteComment;
