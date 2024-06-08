@@ -1,4 +1,4 @@
-import { UsernameProvider } from "./contexts/LoginContext.jsx";
+import { UsernameProvider } from "./contexts/UserContext.jsx";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";

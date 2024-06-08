@@ -6,18 +6,20 @@ function DeleteComment({ comment }) {
 
   function handleClick(event) {
     event.preventDefault();
-    console.log(comment.comment_id, "comment_id");
     deleteComment(comment.comment_id);
     setIsDeleted(true);
   }
 
   if (!isDeleted) {
     return (
-      <form action="">
-        <button onClick={handleClick}>Delete comment</button>
-      </form>
+      <>
+        <form action="">
+          <button onClick={handleClick}>Delete comment</button>
+        </form>
+      </>
     );
   }
+  return <p>{"Comment deleted."}</p>;
 }
 
 export default DeleteComment;

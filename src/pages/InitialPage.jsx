@@ -1,9 +1,17 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Loading from "../components/Loading";
 
 function InitialPage() {
   const [isLoading, setIsLoading] = useState();
+  const navigate = useNavigate();
+
+  function handleLoginClick() {
+    navigate("/login");
+  }
+  function handleSignupClick() {
+    navigate("/signup");
+  }
 
   if (isLoading) {
     return <Loading page={"Reddit News is"} />;
@@ -14,9 +22,8 @@ function InitialPage() {
         Welcome to Reddit News! Because, you know, the world definitely needed
         another groundbreaking social network...
       </p>
-      <Link to="/login">Login</Link>
-      <br />
-      <Link to="/signup">Sign Up!</Link>
+      <button onClick={handleLoginClick}>Login</button>
+      <button onClick={handleSignupClick}>Sign Up!</button>
     </>
   );
 }

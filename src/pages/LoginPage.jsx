@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useContext } from "react";
-import { UsernameContext } from "../contexts/LoginContext";
+import { UsernameContext } from "../contexts/UserContext";
 import { getUsers } from "../api";
 import Loading from "../components/Loading";
 

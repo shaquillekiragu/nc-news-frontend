@@ -7,7 +7,6 @@ function PostComment({ article_id }) {
   const [hasPosted, setHasPosted] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  // I'm currently hardcoding in the username below, but I will refactor to implement useContext to have the user set the username in the login page on a later ticket because of time.
   const username = "cooljmessy";
 
   function handleChange(event) {

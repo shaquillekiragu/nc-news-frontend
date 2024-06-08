@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getArticle, patchVoteCount } from "../api";
+import { getArticle } from "../api";
+import PatchArticleVotes from "../components/PatchArticlesVotes";
 import Comments from "../components/Comments";
 import Loading from "../components/Loading";
 
@@ -24,37 +25,7 @@ function ViewArticle() {
       .catch((err) => {
         console.log(err);
       });
-  }, [article.comment_count]);
-
-  function handleUpvoteClick(event) {
-    event.preventDefault();
-    let inc_votes = 0;
-    setVoteCount((currentVoteCount) => {
-      if (currentVoteCount !== article.votes + 1) {
-        ++inc_votes;
-        return currentVoteCount + 1;
-      }
-      return currentVoteCount;
-    });
-    patchVoteCount(article_id, inc_votes).catch((err) => {
-      console.log(err);
-    });
-  }
-
-  function handleDownvoteClick(event) {
-    event.preventDefault();
-    let inc_votes = 0;
-    setVoteCount((currentVoteCount) => {
-      if (currentVoteCount !== article.votes - 1) {
-        --inc_votes;
-        return currentVoteCount - 1;
-      }
-      return currentVoteCount;
-    });
-    patchVoteCount(article_id, inc_votes).catch((err) => {
-      console.log(err);
-    });
-  }
+  }, []);
 
   if (isLoading) {
     return <Loading page={"Article"} />;
@@ -68,13 +39,12 @@ function ViewArticle() {
       <img src={article.article_img_url} alt="Article thumbnail" />
       <p>{article.body}</p>
       <p>Votes: {voteCount}</p>
-      <form action="">
-        <button onClick={handleUpvoteClick}>Upvote</button>
-        <button onClick={handleDownvoteClick}>Downvote</button>
-      </form>
+      <PatchArticleVotes
+        setVoteCount={setVoteCount}
+        article={article}
+        article_id={article_id}
+      />
       <p>Created: {article.created_at}</p>
-      <p>Comments: {article.comment_count}</p>
-      <br />
       <Comments article_id={article_id} />
     </>
   );

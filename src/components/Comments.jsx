@@ -24,6 +24,8 @@ function Comments({ article_id }) {
   }
   return (
     <>
+      <p>Comments: {commentsList.length}</p>
+      <br />
       <h2>Comments:</h2>
       <PostComment article_id={article_id} />
       <ul>
