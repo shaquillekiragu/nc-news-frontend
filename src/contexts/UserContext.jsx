@@ -1,13 +1,21 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useContext } from "react";
 
-export const UsernameContext = createContext();
+export const UserContext = createContext();
 
-export function UsernameProvider({ children }) {
-  const [username, setUsername] = useState("");
+export function useAuth() {
+  return useContext(UserContext);
+}
 
-  return (
-    <UsernameContext.Provider value={{ username, setUsername }}>
-      {children}
-    </UsernameContext.Provider>
-  );
+export default function UserProvider({ children }) {
+  const [authUser, setAuthUser] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const value = {
+    authUser,
+    setAuthUser,
+    isLoggedIn,
+    setIsLoggedIn,
+  };
+
+  return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 }

@@ -1,11 +1,23 @@
-function Header() {
-  const user = undefined;
+import { useAuth } from "../contexts/UserContext";
+import { useNavigate } from "react-router-dom";
 
-  if (user) {
+function Header() {
+  const { authUser, setAuthUser, isLoggedIn, setIsLoggedIn } = useAuth();
+  const navigate = useNavigate();
+
+  function handleClick(event) {
+    event.preventDefault();
+    setAuthUser("");
+    setIsLoggedIn(false);
+    navigate("/");
+  }
+
+  if (isLoggedIn) {
     return (
       <>
         <h1>Reddit News</h1>
-        <p>User logged in: </p>
+        <p>User logged in: {authUser}</p>
+        <button onClick={handleClick}>Log Out</button>
       </>
     );
   }

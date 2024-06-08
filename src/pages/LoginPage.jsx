@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
-import { useContext } from "react";
-import { UsernameContext } from "../contexts/UserContext";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/UserContext";
 import { getUsers } from "../api";
 import Loading from "../components/Loading";
 
 function LoginPage() {
-  const { username, setUsername } = useContext(UsernameContext);
-  const [password, setPassword] = useState("");
   const [users, setUsers] = useState([]);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
-  const invalidMsg = document.getElementById("invalid-msg");
+  const navigate = useNavigate();
+  const { authUser, setAuthUser, isLoggedIn, setIsLoggedIn } = useAuth();
 
   useEffect(() => {
     getUsers()
@@ -27,11 +28,20 @@ function LoginPage() {
     setUsername(event.target.value);
   }
 
+  const invalidMsg = document.getElementById("invalid-msg");
+
   function handleSubmit(event) {
     const isValidUsername = users.some((user) => {
       return user.username === username;
     });
-    if (!isValidUsername) {
+    if (isValidUsername) {
+      event.preventDefault();
+      setAuthUser(username);
+      setIsLoggedIn(true);
+      console.log(authUser, "authUser 2");
+      console.log(isLoggedIn, "isLoggedIn 2");
+      navigate("/articles");
+    } else {
       event.preventDefault();
       invalidMsg.style.visibility = "visible";
     }
@@ -51,7 +61,7 @@ function LoginPage() {
         another groundbreaking social network...
       </p>
       <h3>Login:</h3>
-      <form action="/articles" onSubmit={handleSubmit}>
+      <form action="" onSubmit={handleSubmit}>
         <label htmlFor="username">Username: </label>
         <input
           placeholder="Enter your username..."

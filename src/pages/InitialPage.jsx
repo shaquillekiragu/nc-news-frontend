@@ -1,9 +1,6 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Loading from "../components/Loading";
 
 function InitialPage() {
-  const [isLoading, setIsLoading] = useState();
   const navigate = useNavigate();
 
   function handleLoginClick() {
@@ -13,9 +10,6 @@ function InitialPage() {
     navigate("/signup");
   }
 
-  if (isLoading) {
-    return <Loading page={"Reddit News is"} />;
-  }
   return (
     <>
       <p>

@@ -1,4 +1,4 @@
-import { UsernameProvider } from "./contexts/UserContext.jsx";
+import UserProvider from "./contexts/UserContext.jsx";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
@@ -11,7 +11,7 @@ import ViewArticle from "./pages/ViewArticle";
 function App() {
   return (
     <>
-      <UsernameProvider>
+      <UserProvider>
         <Header />
         <Routes>
           <Route path="/" element={<InitialPage />} />
@@ -24,7 +24,7 @@ function App() {
             element={<ViewArticle />}
           />
         </Routes>
-      </UsernameProvider>
+      </UserProvider>
     </>
   );
 }
