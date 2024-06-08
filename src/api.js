@@ -29,12 +29,6 @@ export function getComments(article_id) {
   );
 }
 
-export function getComment(article_id, comment_id) {
-  return axios.get(
-    `https://news-webpage-project.onrender.com/api/articles/${article_id}/comments/${comment_id}`
-  );
-}
-
 export function postComment(article_id, username, postedBody) {
   return axios.post(
     `https://news-webpage-project.onrender.com/api/articles/${article_id}/comments`,

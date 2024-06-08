@@ -1,27 +1,22 @@
 import { useState, useEffect } from "react";
 import { deleteComment } from "../api";
 
-function DeleteComment({ comment_id }) {
-  const [buttonVisibility, setButtonVisibility] = useState("hidden");
-
-  useEffect(() => {
-    document.getElementById("delete-button").visibility = buttonVisibility;
-    if (username === comment.author) {
-      setButtonVisibility("visible");
-    }
-  }, []);
+function DeleteComment({ comment }) {
+  const [isDeleted, setIsDeleted] = useState(false);
 
   function handleClick(event) {
     event.preventDefault();
-    deleteComment(comment_id);
+    if (!isDeleted) {
+      console.log(comment.comment_id, "comment_id");
+      deleteComment(comment.comment_id);
+      setIsDeleted(true);
+    }
   }
 
   return (
-    <div id="delete-button">
-      <form action="">
-        <button onClick={handleClick}>Delete comment</button>
-      </form>
-    </div>
+    <form action="">
+      <button onClick={handleClick}>Delete comment</button>
+    </form>
   );
 }
 

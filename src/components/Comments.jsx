@@ -17,7 +17,7 @@ function Comments({ article_id }) {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [commentsList]);
 
   if (isLoading) {
     return <Loading page={"Comments"} />;

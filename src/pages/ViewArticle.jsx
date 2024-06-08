@@ -24,7 +24,7 @@ function ViewArticle() {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [article]);
 
   function handleUpvoteClick(event) {
     event.preventDefault();
