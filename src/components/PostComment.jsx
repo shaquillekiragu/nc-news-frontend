@@ -16,19 +16,18 @@ function PostComment({ article_id }) {
     console.log(currentInput, "currentInput");
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    setPostedBody(currentInput);
-    setHasPosted(true);
-    console.log(postedBody, "postedBody");
-    postComment(article_id, authUser.username, postedBody)
-      .then(() => {
-        setIsLoading(false);
-        setHasPosted(false);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  async function handleSubmit(event) {
+    try {
+      event.preventDefault();
+      setPostedBody(currentInput);
+      setHasPosted(true);
+      console.log(postedBody, "postedBody");
+      await postComment(article_id, authUser.username, postedBody);
+      setIsLoading(false);
+      setHasPosted(false);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   if (isLoading && hasPosted) {

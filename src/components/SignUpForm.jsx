@@ -38,7 +38,7 @@ function SignUpForm({
         <label htmlFor="avatar_url">Profile Avatar URL: </label>
         <input
           id="avatar_url"
-          type="text"
+          type="url"
           placeholder="Type here... (optional)"
           onChange={handleAvatarUrlChange}
         />
@@ -46,12 +46,13 @@ function SignUpForm({
         <label htmlFor="password">Password: </label>
         <input
           id="password"
-          type="text"
+          type="password"
           placeholder="Type here..."
           onChange={handlePasswordChange}
           required
         />
         <br />
+
         <button type="submit">Sign In!</button>
       </form>
     </>

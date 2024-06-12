@@ -3,8 +3,8 @@ function SortArticles({ handleSortChange }) {
     <>
       <label htmlFor="sorts">Sort articles by: </label>
       <select name="sort-options" id="sorts" onChange={handleSortChange}>
-        <option value="">Default</option>
-        <option value="-created_at">Newest</option>
+        <option value="">Newest (Default)</option>
+        {/* <option value="-created_at">Newest</option> */}
         <option value="+created_at">Oldest</option>
         <option value="+title">Title (A-Z)</option>
         <option value="-title">Title (Z-A)</option>

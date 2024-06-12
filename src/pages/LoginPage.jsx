@@ -8,20 +8,24 @@ function LoginPage() {
   const [users, setUsers] = useState([]);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [invalidMsg, setInvalidMsg] = useState(false);
+  const [hasAttemptedLogin, setHasAttemptedLogin] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   const navigate = useNavigate();
   const { authUser, setAuthUser, isLoggedIn, setIsLoggedIn } = useAuth();
 
   useEffect(() => {
-    getUsers()
-      .then((response) => {
+    async function fetchUsers() {
+      try {
+        const response = await getUsers();
         setUsers(response.data.users);
         setIsLoading(false);
-      })
-      .catch((err) => {
+      } catch (err) {
         console.log(err);
-      });
+      }
+    }
+    fetchUsers();
   }, []);
 
   function handleUsernameChange(event) {
@@ -32,26 +36,25 @@ function LoginPage() {
     setPassword(event.target.value);
   }
 
-  const invalidMsg = document.getElementById("invalid-msg");
-
   function handleSubmit(event) {
+    event.preventDefault();
+    setHasAttemptedLogin(true);
     const isValidUsername = users.some((user) => {
       return user.username === username;
     });
     if (isValidUsername) {
-      event.preventDefault();
       setAuthUser({ username: username });
       setIsLoggedIn(true);
       console.log(authUser, "authUser");
       console.log(isLoggedIn, "isLoggedIn");
+      setInvalidMsg(false);
       navigate("/articles");
     } else {
-      event.preventDefault();
-      invalidMsg.style.visibility = "visible";
+      setInvalidMsg(true);
     }
   }
 
-  if (isLoading) {
+  if (isLoading && !hasAttemptedLogin) {
     return <Loading page={"Login page"} />;
   }
   return (
@@ -77,16 +80,20 @@ function LoginPage() {
           placeholder="Enter your password..."
           value={password}
           id="password"
-          type="text"
+          type="password"
           onChange={handlePasswordChange}
           required
         />
         <br />
         <button type="submit">Login</button>
       </form>
-      <span id="invalid-msg">
-        Invalid username. Please enter in a valid username.
-      </span>
+      {invalidMsg ? (
+        <span id="invalid-msg">
+          Invalid username. Please enter in a valid username.
+        </span>
+      ) : (
+        <></>
+      )}
     </>
   );
 }

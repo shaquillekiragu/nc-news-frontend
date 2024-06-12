@@ -7,7 +7,7 @@ import Loading from "../components/Loading";
 
 function ViewArticle() {
   const { article_id } = useParams();
-  const [article, setArticle] = useState([]);
+  const [article, setArticle] = useState({});
   const [voteCount, setVoteCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -16,15 +16,17 @@ function ViewArticle() {
   }
 
   useEffect(() => {
-    getArticle(article_id)
-      .then((response) => {
+    async function fetchArticleView() {
+      try {
+        const response = await getArticle(article_id);
         setArticle(response.data.article);
         setVoteCount(response.data.article.votes);
         setIsLoading(false);
-      })
-      .catch((err) => {
+      } catch (err) {
         console.log(err);
-      });
+      }
+    }
+    fetchArticleView();
   }, []);
 
   if (isLoading) {
@@ -34,17 +36,25 @@ function ViewArticle() {
     <>
       <h2>Article</h2>
       <h3>{article.title}</h3>
-      <p>Written by: {article.author}</p>
-      <p>Topic: {article.topic}</p>
+      <p>
+        Written by: <b>{article.author}</b>
+      </p>
+      <p>
+        Topic: <b>{article.topic}</b>
+      </p>
       <img src={article.article_img_url} alt="Article thumbnail" />
       <p>{article.body}</p>
-      <p>Votes: {voteCount}</p>
+      <p>
+        Votes: <b>{voteCount}</b>
+      </p>
       <PatchArticleVotes
         setVoteCount={setVoteCount}
         article={article}
         article_id={article_id}
       />
-      <p>Created at: {article.created_at}</p>
+      <p>
+        Created at: <b>{article.created_at}</b>
+      </p>
       <Comments article_id={article_id} />
     </>
   );

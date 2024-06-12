@@ -50,9 +50,9 @@ export function patchVoteCount(article_id, inc_votes) {
   );
 }
 
-export function patchCommentVoteCount(comment_id, inc_votes) {
+export function patchCommentVoteCount(article_id, comment_id, inc_votes) {
   return axios.patch(
-    `https://news-webpage-project.onrender.com/api/comments/${comment_id}`,
+    `https://news-webpage-project.onrender.com/api/articles/${article_id}/comments/${comment_id}`,
     {
       inc_votes: inc_votes,
     }

@@ -1,76 +1,63 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/UserContext";
 import { postUser } from "../api";
 import SignUpForm from "../components/SignUpForm";
 
 function SignUpPage() {
-  const [postedUser, setPostedUser] = useState({});
   const [hasPosted, setHasPosted] = useState(true);
   const [hasInputtedInfo, setHasInputtedInfo] = useState(false);
-  const [usernameInput, setUsernameInput] = useState("");
-  const [firstnameInput, setFirstnameInput] = useState("");
-  const [lastnameInput, setLastnameInput] = useState("");
-  const [avatarUrlInput, setAvatarUrlInput] = useState("");
-  const [passwordInput, setPasswordInput] = useState("");
+  const [username, setUsername] = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [avatarUrl, setAvatarUrl] = useState("");
+  const [password, setPassword] = useState("");
 
   const { authUser, setAuthUser, isLoggedIn, setIsLoggedIn } = useAuth();
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    setHasInputtedInfo(true);
-    setHasPosted(false);
-    const inputtedName = lastnameInput
-      ? `${firstnameInput} ${lastnameInput}`
-      : firstnameInput;
+  const navigate = useNavigate();
 
-    setPostedUser({
-      username: usernameInput,
-      name: inputtedName,
-      avatar_url: avatarUrlInput,
-    });
+  async function handleSubmit(event) {
+    try {
+      event.preventDefault();
+      setHasInputtedInfo(true);
+      setHasPosted(false);
+      const fullName = lastname ? `${firstname} ${lastname}` : firstname;
 
-    postUser(postedUser.username, postedUser.name, postedUser.avatar_url)
-      .then(() => {
-        setHasPosted(true);
-        setAuthUser({ username: postedUser.username });
-        setIsLoggedIn(true);
-        console.log(authUser, "authUser");
-        console.log(isLoggedIn, "isLoggedIn");
-        navigate("/articles");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      console.log(username, "<< username");
+      console.log(fullName, "<< fullName");
+      console.log(avatarUrl, "<< avatarUrl");
+
+      await postUser(username, fullName, avatarUrl);
+      setHasPosted(true);
+      setAuthUser({ username: username });
+      setIsLoggedIn(true);
+      console.log(authUser, "authUser");
+      console.log(isLoggedIn, "isLoggedIn");
+      navigate("/articles");
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   function handleUsernameChange(event) {
-    event.preventDefault();
-    setUsernameInput(event.target.value);
-    console.log(usernameInput, "usernameInput");
+    setUsername(event.target.value);
   }
 
   function handleFirstnameChange(event) {
-    event.preventDefault();
-    setFirstnameInput(event.target.value);
-    console.log(firstnameInput, "firstnameInput");
+    setFirstname(event.target.value);
   }
 
   function handleLastnameChange(event) {
-    event.preventDefault();
-    setLastnameInput(event.target.value);
-    console.log(lastnameInput, "lastnameInput");
+    setLastname(event.target.value);
   }
 
   function handleAvatarUrlChange(event) {
-    event.preventDefault();
-    setAvatarUrlInput(event.target.value);
-    console.log(avatarUrlInput, "avatarUrlInput");
+    setAvatarUrl(event.target.value);
   }
 
   function handlePasswordChange(event) {
-    event.preventDefault();
-    setPasswordInput(event.target.value);
-    console.log(passwordInput, "passwordInput");
+    setPassword(event.target.value);
   }
 
   if (hasInputtedInfo && (!hasPosted || !isLoggedIn)) {

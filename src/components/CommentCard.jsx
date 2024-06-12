@@ -3,12 +3,13 @@ import { useAuth } from "../contexts/UserContext";
 import { patchCommentVoteCount } from "../api";
 import DeleteComment from "./DeleteComment";
 
-function CommentCard({ comment }) {
+function CommentCard({ comment, article_id }) {
   const [commentVoteCount, setCommentVoteCount] = useState(0);
   const { authUser, setAuthUser, isLoggedIn, setIsLoggedIn } = useAuth();
 
   function handleCommentUpvoteClick(event) {
     event.preventDefault();
+    console.log(comment.comment_id, "comment_id");
     let inc_votes = 0;
     setCommentVoteCount((currentCommentVoteCount) => {
       if (currentCommentVoteCount !== comment.votes + 1) {
@@ -17,9 +18,11 @@ function CommentCard({ comment }) {
       }
       return currentCommentVoteCount;
     });
-    patchCommentVoteCount(comment.comment_id, inc_votes).catch((err) => {
-      console.log(err);
-    });
+    patchCommentVoteCount(article_id, comment.comment_id, inc_votes).catch(
+      (err) => {
+        console.log(err);
+      }
+    );
   }
 
   function handleCommentDownvoteClick(event) {
@@ -32,9 +35,11 @@ function CommentCard({ comment }) {
       }
       return currentCommentVoteCount;
     });
-    patchCommentVoteCount(comment.comment_id, inc_votes).catch((err) => {
-      console.log(err);
-    });
+    patchCommentVoteCount(article_id, comment.comment_id, inc_votes).catch(
+      (err) => {
+        console.log(err);
+      }
+    );
   }
 
   if (authUser.username === comment.author) {

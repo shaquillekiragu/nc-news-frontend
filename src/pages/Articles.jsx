@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useSearchParams, Link } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import getArticles from "../api";
 import FilterByTopic from "../components/FilterByTopic";
 import SortArticles from "../components/SortArticles";
@@ -31,22 +31,25 @@ function Articles() {
   }
 
   useEffect(() => {
-    let urlStr = "https://news-webpage-project.onrender.com/api/articles";
-    if (topicQuery && sortQuery) {
-      urlStr += `?topic=${topicQuery}&sort=${sortQuery}`;
-    } else if (topicQuery) {
-      urlStr += `?topic=${topicQuery}`;
-    } else if (sortQuery) {
-      urlStr += `?sort=${sortQuery}`;
-    }
-    getArticles(urlStr)
-      .then((response) => {
+    async function fetchArticles() {
+      try {
+        let urlStr = "https://news-webpage-project.onrender.com/api/articles";
+        if (topicQuery && sortQuery) {
+          urlStr += `?topic=${topicQuery}&sort=${sortQuery}`;
+        } else if (topicQuery) {
+          urlStr += `?topic=${topicQuery}`;
+        } else if (sortQuery) {
+          urlStr += `?sort=${sortQuery}`;
+        }
+        const response = await getArticles(urlStr);
         setArticlesList(response.data.articles);
         setIsLoading(false);
-      })
-      .catch((err) => {
+      } catch (err) {
         console.log(err);
-      });
+        setIsLoading(false);
+      }
+    }
+    fetchArticles();
   }, [topicQuery, sortQuery]);
 
   if (isLoading) {
@@ -54,9 +57,7 @@ function Articles() {
   }
   return (
     <>
-      {/* <Link to="/articles"> */}
       <h2>Articles</h2>
-      {/* </Link> */}
       <FilterByTopic handleTopicChange={handleTopicChange} />
       <br />
       <SortArticles handleSortChange={handleSortChange} />

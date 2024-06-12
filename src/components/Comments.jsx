@@ -9,14 +9,17 @@ function Comments({ article_id }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getComments(article_id)
-      .then((response) => {
+    async function fetchComments() {
+      try {
+        const response = await getComments(article_id);
         setCommentsList(response.data.comments);
         setIsLoading(false);
-      })
-      .catch((err) => {
+      } catch (err) {
         console.log(err);
-      });
+        setIsLoading(false);
+      }
+    }
+    fetchComments();
   }, [commentsList]);
 
   if (isLoading) {
@@ -24,7 +27,9 @@ function Comments({ article_id }) {
   }
   return (
     <>
-      <p>Comments: {commentsList.length}</p>
+      <p>
+        Comments: <b>{commentsList.length}</b>
+      </p>
       <br />
       <h2>Comments:</h2>
       <PostComment article_id={article_id} />
@@ -32,7 +37,7 @@ function Comments({ article_id }) {
         {commentsList.map((comment) => {
           return (
             <li key={comment.comment_id}>
-              {<CommentCard comment={comment} />}
+              {<CommentCard comment={comment} article_id={article_id} />}
             </li>
           );
         })}
