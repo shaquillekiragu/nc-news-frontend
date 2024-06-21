@@ -2,4 +2,4 @@
 
 ## Description
 
-This project is the frontend of a Reddit-inspired news application,
+This project is the frontend of a news-based social network inspired by Reddit,
