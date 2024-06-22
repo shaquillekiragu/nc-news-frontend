@@ -15,7 +15,7 @@ function Header() {
   if (isLoggedIn) {
     return (
       <>
-        <h1>Reddit News</h1>
+        <h1>NC News</h1>
         <p>User logged in: {authUser.username}</p>
         <button onClick={handleClick}>Log Out</button>
       </>
@@ -23,7 +23,7 @@ function Header() {
   }
   return (
     <>
-      <h1>Reddit News</h1>
+      <h1>NC News</h1>
     </>
   );
 }

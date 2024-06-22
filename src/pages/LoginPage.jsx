@@ -23,6 +23,7 @@ function LoginPage() {
         setIsLoading(false);
       } catch (err) {
         console.log(err);
+        setIsLoading(false);
       }
     }
     fetchUsers();
@@ -60,8 +61,8 @@ function LoginPage() {
   return (
     <>
       <p>
-        Welcome to Reddit News! Because, you know, the world definitely needed
-        another groundbreaking social network...
+        Welcome to NC News! Because you know, the world definitely needed
+        another groundbreaking news network...
       </p>
       <h3>Login:</h3>
       <form action="" onSubmit={handleSubmit}>

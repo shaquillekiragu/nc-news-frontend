@@ -4,34 +4,38 @@ import { patchVoteCount } from "../api";
 function PatchArticleVotes({ setVoteCount, article, article_id }) {
   const { authUser, setAuthUser, isLoggedIn, setIsLoggedIn } = useAuth();
 
-  function handleUpvoteClick(event) {
-    event.preventDefault();
-    let inc_votes = 0;
-    setVoteCount((currentVoteCount) => {
-      if (currentVoteCount !== article.votes + 1) {
-        ++inc_votes;
-        return currentVoteCount + 1;
-      }
-      return currentVoteCount;
-    });
-    patchVoteCount(article_id, inc_votes).catch((err) => {
+  async function handleUpvoteClick(event) {
+    try {
+      event.preventDefault();
+      let inc_votes = 0;
+      setVoteCount((currentVoteCount) => {
+        if (currentVoteCount !== article.votes + 1) {
+          ++inc_votes;
+          return currentVoteCount + 1;
+        }
+        return currentVoteCount;
+      });
+      await patchVoteCount(article_id, inc_votes);
+    } catch (err) {
       console.log(err);
-    });
+    }
   }
 
-  function handleDownvoteClick(event) {
-    event.preventDefault();
-    let inc_votes = 0;
-    setVoteCount((currentVoteCount) => {
-      if (currentVoteCount !== article.votes - 1) {
-        --inc_votes;
-        return currentVoteCount - 1;
-      }
-      return currentVoteCount;
-    });
-    patchVoteCount(article_id, inc_votes).catch((err) => {
+  async function handleDownvoteClick(event) {
+    try {
+      event.preventDefault();
+      let inc_votes = 0;
+      setVoteCount((currentVoteCount) => {
+        if (currentVoteCount !== article.votes - 1) {
+          --inc_votes;
+          return currentVoteCount - 1;
+        }
+        return currentVoteCount;
+      });
+      await patchVoteCount(article_id, inc_votes);
+    } catch (err) {
       console.log(err);
-    });
+    }
   }
   if (authUser.username !== article.author) {
     return (

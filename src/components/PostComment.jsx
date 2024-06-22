@@ -27,6 +27,8 @@ function PostComment({ article_id }) {
       setHasPosted(false);
     } catch (err) {
       console.log(err);
+      setIsLoading(false);
+      setHasPosted(false);
     }
   }
 

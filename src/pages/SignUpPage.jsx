@@ -70,8 +70,8 @@ function SignUpPage() {
   return (
     <>
       <p>
-        Welcome to Reddit News! Because, you know, the world definitely needed
-        another groundbreaking social network...
+        Welcome to NC News! Because you know, the world definitely needed
+        another groundbreaking news network...
       </p>
       <SignUpForm
         handleSubmit={handleSubmit}

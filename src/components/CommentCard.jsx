@@ -7,39 +7,45 @@ function CommentCard({ comment, article_id }) {
   const [commentVoteCount, setCommentVoteCount] = useState(0);
   const { authUser, setAuthUser, isLoggedIn, setIsLoggedIn } = useAuth();
 
-  function handleCommentUpvoteClick(event) {
-    event.preventDefault();
-    console.log(comment.comment_id, "comment_id");
-    let inc_votes = 0;
-    setCommentVoteCount((currentCommentVoteCount) => {
-      if (currentCommentVoteCount !== comment.votes + 1) {
-        ++inc_votes;
-        return currentCommentVoteCount + 1;
-      }
-      return currentCommentVoteCount;
-    });
-    patchCommentVoteCount(article_id, comment.comment_id, inc_votes).catch(
-      (err) => {
-        console.log(err);
-      }
-    );
+  async function handleCommentUpvoteClick(event) {
+    try {
+      event.preventDefault();
+      console.log(comment.comment_id, "comment_id");
+      let inc_votes = 0;
+      setCommentVoteCount((currentCommentVoteCount) => {
+        if (currentCommentVoteCount !== comment.votes + 1) {
+          ++inc_votes;
+          return currentCommentVoteCount + 1;
+        }
+        return currentCommentVoteCount;
+      });
+      console.log(article_id, "<< article_id");
+      console.log(comment.comment_id, "<< comment_id");
+      console.log(inc_votes, "<< inc_votes");
+      await patchCommentVoteCount(article_id, comment.comment_id, inc_votes);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
-  function handleCommentDownvoteClick(event) {
-    event.preventDefault();
-    let inc_votes = 0;
-    setCommentVoteCount((currentCommentVoteCount) => {
-      if (currentCommentVoteCount !== comment.votes - 1) {
-        --inc_votes;
-        return currentCommentVoteCount - 1;
-      }
-      return currentCommentVoteCount;
-    });
-    patchCommentVoteCount(article_id, comment.comment_id, inc_votes).catch(
-      (err) => {
-        console.log(err);
-      }
-    );
+  async function handleCommentDownvoteClick(event) {
+    try {
+      event.preventDefault();
+      let inc_votes = 0;
+      setCommentVoteCount((currentCommentVoteCount) => {
+        if (currentCommentVoteCount !== comment.votes - 1) {
+          --inc_votes;
+          return currentCommentVoteCount - 1;
+        }
+        return currentCommentVoteCount;
+      });
+      console.log(article_id, "<< article_id");
+      console.log(comment.comment_id, "<< comment_id");
+      console.log(inc_votes, "<< inc_votes");
+      await patchCommentVoteCount(article_id, comment.comment_id, inc_votes);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   if (authUser.username === comment.author) {
