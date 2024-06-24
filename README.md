@@ -40,4 +40,6 @@ code nc-news-frontend
 npm run dev
 ```
 
+4. Open the provided localhost URL in your browser. I hope you find using my web application to be a pleasant experience!
+
 This portfolio project was created as part of a Digital Skills Bootcamp in Software Engineering provided by [Northcoders](https://northcoders.com/)
