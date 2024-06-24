@@ -13,9 +13,9 @@ function Header() {
     navigate("/");
   }
 
-  function handleLoginClick(event) {
+  function handleSigninClick(event) {
     event.preventDefault();
-    navigate("/login");
+    navigate("/");
   }
 
   if (isLoggedIn) {
@@ -38,9 +38,9 @@ function Header() {
     <>
       <h1>NC News</h1>
       <p>
-        <em>No user logged in</em>
+        <em>No user signed in</em>
       </p>
-      <button onClick={handleLoginClick}>Log In</button>
+      <button onClick={handleSigninClick}>Sign In</button>
     </>
   );
 }

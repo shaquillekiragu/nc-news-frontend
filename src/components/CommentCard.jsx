@@ -11,18 +11,23 @@ function CommentCard({ comment, article_id }) {
     try {
       event.preventDefault();
       console.log(comment.comment_id, "comment_id");
-      let inc_votes = 0;
+      let inc_comment_votes = 0;
       setCommentVoteCount((currentCommentVoteCount) => {
         if (currentCommentVoteCount !== comment.votes + 1) {
-          ++inc_votes;
+          ++inc_comment_votes;
           return currentCommentVoteCount + 1;
         }
         return currentCommentVoteCount;
       });
       console.log(article_id, "<< article_id");
       console.log(comment.comment_id, "<< comment_id");
-      console.log(inc_votes, "<< inc_votes");
-      await patchCommentVoteCount(article_id, comment.comment_id, inc_votes);
+      console.log(inc_comment_votes, "<< inc_comment_votes");
+      await patchCommentVoteCount(
+        article_id,
+        comment.comment_id,
+        inc_comment_votes
+      );
+      console.log("hello");
     } catch (err) {
       console.log(err);
     }
@@ -31,18 +36,22 @@ function CommentCard({ comment, article_id }) {
   async function handleCommentDownvoteClick(event) {
     try {
       event.preventDefault();
-      let inc_votes = 0;
+      let inc_comment_votes = 0;
       setCommentVoteCount((currentCommentVoteCount) => {
         if (currentCommentVoteCount !== comment.votes - 1) {
-          --inc_votes;
+          --inc_comment_votes;
           return currentCommentVoteCount - 1;
         }
         return currentCommentVoteCount;
       });
       console.log(article_id, "<< article_id");
       console.log(comment.comment_id, "<< comment_id");
-      console.log(inc_votes, "<< inc_votes");
-      await patchCommentVoteCount(article_id, comment.comment_id, inc_votes);
+      console.log(inc_comment_votes, "<< inc_comment_votes");
+      await patchCommentVoteCount(
+        article_id,
+        comment.comment_id,
+        inc_comment_votes
+      );
     } catch (err) {
       console.log(err);
     }
