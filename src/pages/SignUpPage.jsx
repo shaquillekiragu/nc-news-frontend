@@ -69,10 +69,7 @@ function SignUpPage() {
   }
   return (
     <>
-      <p>
-        Welcome to NC News! Because you know, the world definitely needed
-        another groundbreaking news network...
-      </p>
+      <p>Welcome to NC News!</p>
       <SignUpForm
         handleSubmit={handleSubmit}
         handleUsernameChange={handleUsernameChange}

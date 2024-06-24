@@ -60,10 +60,7 @@ function LoginPage() {
   }
   return (
     <>
-      <p>
-        Welcome to NC News! Because you know, the world definitely needed
-        another groundbreaking news network...
-      </p>
+      <p>Welcome to NC News!</p>
       <h3>Login:</h3>
       <form action="" onSubmit={handleSubmit}>
         <label htmlFor="username">Username: </label>
