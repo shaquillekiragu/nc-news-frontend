@@ -18,7 +18,7 @@ You will need to have these versions or newer for the following technologies in 
 
 - Node.js - **v20.9.0** or newer
 
-## Installation
+## Running the Project Locally
 
 **Instructions:**
 
@@ -27,7 +27,14 @@ You will need to have these versions or newer for the following technologies in 
 ```
 https://github.com/shaquillekiragu/nc-news-frontend.git
 ```
-2. Next you'll need to run the :
+
+2. Next, you'll need to open the cloned repository locally. Run:
+
+```
+code nc-news-frontend
+```
+
+3. And lastly, to open the vite app in a browser, run:
 
 ```
 npm run dev
