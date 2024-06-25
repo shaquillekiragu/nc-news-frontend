@@ -6,7 +6,7 @@ This project is the frontend of a news-based social network application, inspire
 
 ## Deployed Web Application
 
-The link to the deployed version of this frontend react app: 
+The link to the deployed version of this frontend react app: https://nc-news-shaquille-kiragu.netlify.app
 
 ## Backend Repository
 
