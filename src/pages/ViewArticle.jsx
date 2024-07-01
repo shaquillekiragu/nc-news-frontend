@@ -1,7 +1,7 @@
-import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { getArticle } from "../api";
-import PatchArticleVotes from "../components/PatchArticlesVotes";
+import PatchArticleVotes from "../components/PatchArticleVotes";
 import Comments from "../components/Comments";
 import Loading from "../components/Loading";
 
@@ -23,7 +23,7 @@ function ViewArticle() {
         setVoteCount(response.data.article.votes);
         setIsLoading(false);
       } catch (err) {
-        console.log(err);
+        console.error(err);
         setIsLoading(false);
       }
     }
@@ -38,15 +38,15 @@ function ViewArticle() {
       <h2>Article</h2>
       <h3>{article.title}</h3>
       <p>
-        Written by: <b>{article.author}</b>
+        Written by: <strong>{article.author}</strong>
       </p>
       <p>
-        Topic: <b>{article.topic}</b>
+        Topic: <strong>{article.topic}</strong>
       </p>
       <img src={article.article_img_url} alt="Article thumbnail" />
       <p>{article.body}</p>
       <p>
-        Votes: <b>{voteCount}</b>
+        Votes: <strong>{voteCount}</strong>
       </p>
       <PatchArticleVotes
         setVoteCount={setVoteCount}
@@ -54,7 +54,7 @@ function ViewArticle() {
         article_id={article_id}
       />
       <p>
-        Created at: <b>{article.created_at}</b>
+        Created at: <strong>{article.created_at}</strong>
       </p>
       <Comments article_id={article_id} />
     </>

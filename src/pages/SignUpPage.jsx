@@ -36,7 +36,7 @@ function SignUpPage() {
       console.log(isLoggedIn, "isLoggedIn");
       navigate("/articles");
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   }
 

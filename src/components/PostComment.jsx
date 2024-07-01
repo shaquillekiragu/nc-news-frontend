@@ -26,7 +26,7 @@ function PostComment({ article_id }) {
       setIsLoading(false);
       setHasPosted(false);
     } catch (err) {
-      console.log(err);
+      console.error(err);
       setIsLoading(false);
       setHasPosted(false);
     }

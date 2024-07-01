@@ -45,7 +45,7 @@ function Articles() {
         setArticlesList(response.data.articles);
         setIsLoading(false);
       } catch (err) {
-        console.log(err);
+        console.error(err);
         setIsLoading(false);
       }
     }

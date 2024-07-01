@@ -22,7 +22,7 @@ function LoginPage() {
         setUsers(response.data.users);
         setIsLoading(false);
       } catch (err) {
-        console.log(err);
+        console.error(err);
         setIsLoading(false);
       }
     }
@@ -62,7 +62,7 @@ function LoginPage() {
     <>
       <p>Welcome to NC News!</p>
       <h3>Login:</h3>
-      <form action="" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="username">Username: </label>
         <input
           placeholder="Enter your username..."

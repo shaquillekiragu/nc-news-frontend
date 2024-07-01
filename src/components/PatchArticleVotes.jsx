@@ -17,7 +17,7 @@ function PatchArticleVotes({ setVoteCount, article, article_id }) {
       });
       await patchVoteCount(article_id, inc_votes);
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   }
 
@@ -34,7 +34,7 @@ function PatchArticleVotes({ setVoteCount, article, article_id }) {
       });
       await patchVoteCount(article_id, inc_votes);
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   }
   if (authUser.username !== article.author) {

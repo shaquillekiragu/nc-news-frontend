@@ -15,7 +15,7 @@ function Comments({ article_id }) {
         setCommentsList(response.data.comments);
         setIsLoading(false);
       } catch (err) {
-        console.log(err);
+        console.error(err);
         setIsLoading(false);
       }
     }
@@ -28,7 +28,7 @@ function Comments({ article_id }) {
   return (
     <>
       <p>
-        Comments: <b>{commentsList.length}</b>
+        Comments: <strong>{commentsList.length}</strong>
       </p>
       <br />
       <h2>Comments:</h2>
