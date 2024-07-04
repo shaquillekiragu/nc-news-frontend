@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is the frontend of a news website, 
+This project serves as the frontend of a news website application, and is my first undertaking of building a frontend using JavaScript and React.js. Users are able to login to existing accounts, or sign up and generate a new account, with which they will use to interact with the different features of the news website. Upon logging in, users will be met with the website's homepage, where they can scroll through several articles on various topics, filtering them by topic and order, and reading an individual article, with which they can upvote or downvote, comment on, and interact with other users' comments on the article. This frontend uses Axios to make API requests to the backend, to fetch, insert, update, or delete data.
 
 ## Deployed Web Application
 
