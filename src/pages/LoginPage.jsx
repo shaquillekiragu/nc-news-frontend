@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/UserContext";
 import { getUsers } from "../api";
 import Loading from "../components/Loading";
+import "../stylesheets/LoginPage.css";
 
 function LoginPage() {
   const [users, setUsers] = useState([]);

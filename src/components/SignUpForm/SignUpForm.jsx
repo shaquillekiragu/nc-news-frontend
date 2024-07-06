@@ -1,3 +1,5 @@
+import "./SignUpForm.css";
+
 function SignUpForm({
   handleSubmit,
   handleUsernameChange,

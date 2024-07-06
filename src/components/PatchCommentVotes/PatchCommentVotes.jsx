@@ -1,4 +1,5 @@
-import { patchCommentVoteCount } from "../api";
+import { patchCommentVoteCount } from "../../api";
+import "./PatchCommentVotes.css";
 
 function PatchArticleVotes({ comment, article_id, setCommentVoteCount }) {
   async function handleCommentUpvoteClick(event) {

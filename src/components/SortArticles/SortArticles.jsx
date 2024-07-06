@@ -1,3 +1,5 @@
+import "./SortArticles.css";
+
 function SortArticles({ handleSortChange }) {
   return (
     <>

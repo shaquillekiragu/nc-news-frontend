@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { useAuth } from "../contexts/UserContext";
-import { postComment } from "../api";
+import { useAuth } from "../../contexts/UserContext";
+import { postComment } from "../../api";
+import "./PostComment.css";
 
 function PostComment({ article_id }) {
   const [postedBody, setPostedBody] = useState("");

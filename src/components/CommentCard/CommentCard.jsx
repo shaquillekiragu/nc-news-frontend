@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { useAuth } from "../contexts/UserContext";
-import DeleteComment from "./DeleteComment";
+import { useAuth } from "../../contexts/UserContext";
+import DeleteComment from "../DeleteComment";
 import PatchCommentVotes from "./PatchCommentVotes";
+import "./CommentCard.css";
 
 function CommentCard({ comment, article_id }) {
   const [commentVoteCount, setCommentVoteCount] = useState(0);

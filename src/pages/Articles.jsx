@@ -5,6 +5,7 @@ import FilterByTopic from "../components/FilterByTopic";
 import SortArticles from "../components/SortArticles";
 import ArticlesList from "../components/ArticlesList";
 import Loading from "../components/Loading";
+import "../stylesheets/Articles.css";
 
 function Articles() {
   const [articlesList, setArticlesList] = useState([]);

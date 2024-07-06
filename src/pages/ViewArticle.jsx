@@ -4,6 +4,7 @@ import { getArticle } from "../api";
 import PatchArticleVotes from "../components/PatchArticleVotes";
 import Comments from "../components/Comments";
 import Loading from "../components/Loading";
+import "../stylesheets/ViewArticle.css";
 
 function ViewArticle() {
   const { article_id } = useParams();

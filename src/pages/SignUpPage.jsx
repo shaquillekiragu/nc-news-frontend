@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/UserContext";
 import { postUser } from "../api";
 import SignUpForm from "../components/SignUpForm";
+import "../stylesheets/SignUpPage.css";
 
 function SignUpPage() {
   const [hasPosted, setHasPosted] = useState(true);

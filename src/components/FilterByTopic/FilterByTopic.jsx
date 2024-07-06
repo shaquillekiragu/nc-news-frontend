@@ -1,3 +1,5 @@
+import "./FilterByTopic.css";
+
 function FilterByTopic({ handleTopicChange }) {
   return (
     <>

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./ArticleCard.css";
 
 function ArticleCard({ article }) {
   const pathId = article.article_id;

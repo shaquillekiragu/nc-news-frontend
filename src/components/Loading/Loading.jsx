@@ -1,3 +1,5 @@
+import "./Loading.css";
+
 function Loading({ page }) {
   return (
     <p>

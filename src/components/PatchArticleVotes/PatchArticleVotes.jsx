@@ -1,5 +1,6 @@
-import { useAuth } from "../contexts/UserContext";
-import { patchVoteCount } from "../api";
+import { useAuth } from "../../contexts/UserContext";
+import { patchVoteCount } from "../../api";
+import "./PatchArticleVotes.css";
 
 function PatchArticleVotes({ setVoteCount, article, article_id }) {
   const { authUser, setAuthUser, isLoggedIn, setIsLoggedIn } = useAuth();
