@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getArticle } from "../api";
-import PatchArticleVotes from "../components/PatchArticleVotes";
-import Comments from "../components/Comments";
-import Loading from "../components/Loading";
+import PatchArticleVotes from "../components/PatchArticleVotes/PatchArticleVotes";
+import Comments from "../components/CommentsList/CommentsList";
+import Loading from "../components/Loading/Loading";
 import "../stylesheets/ViewArticle.css";
 
 function ViewArticle() {

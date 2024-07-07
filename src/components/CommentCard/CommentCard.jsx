@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useAuth } from "../../contexts/UserContext";
-import DeleteComment from "../DeleteComment";
-import PatchCommentVotes from "./PatchCommentVotes";
+import DeleteComment from "../DeleteComment/DeleteComment";
+import PatchCommentVotes from "../PatchCommentVotes/PatchCommentVotes";
 import "./CommentCard.css";
 
 function CommentCard({ comment, article_id }) {

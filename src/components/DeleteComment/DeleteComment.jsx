@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { deleteComment } from "../api";
+import { deleteComment } from "../../api";
 import "./DeleteComment.css";
 
 function DeleteComment({ comment }) {

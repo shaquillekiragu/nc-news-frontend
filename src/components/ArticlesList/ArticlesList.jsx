@@ -1,4 +1,5 @@
-import ArticleCard from "./ArticleCard";
+import ArticleCard from "../ArticleCard/ArticleCard";
+import "./ArticlesList.css";
 
 function ArticlesList({ articlesList, sortQuery }) {
   let sortedArticlesList = [...articlesList];

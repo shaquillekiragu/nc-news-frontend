@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import getArticles from "../api";
-import FilterByTopic from "../components/FilterByTopic";
-import SortArticles from "../components/SortArticles";
-import ArticlesList from "../components/ArticlesList";
-import Loading from "../components/Loading";
+import FilterByTopic from "../components/FilterByTopic/FilterByTopic";
+import SortArticles from "../components/SortArticles/SortArticles";
+import ArticlesList from "../components/ArticlesList/ArticlesList";
+import Loading from "../components/Loading/Loading";
 import "../stylesheets/Articles.css";
 
 function Articles() {

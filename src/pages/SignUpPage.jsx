@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/UserContext";
 import { postUser } from "../api";
-import SignUpForm from "../components/SignUpForm";
+import SignUpForm from "../components/SignUpForm/SignUpForm";
 import "../stylesheets/SignUpPage.css";
 
 function SignUpPage() {

@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { getComments } from "../../api";
-import CommentCard from "./CommentCard";
-import PostComment from "./PostComment";
-import Loading from "./Loading";
-import "./Comments.css";
+import CommentCard from "../CommentCard/CommentCard";
+import PostComment from "../PostComment/PostComment";
+import Loading from "../Loading/Loading";
+import "./CommentsList.css";
 
-function Comments({ article_id }) {
+function CommentsList({ article_id }) {
   const [commentsList, setCommentsList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -48,4 +48,4 @@ function Comments({ article_id }) {
   );
 }
 
-export default Comments;
+export default CommentsList;

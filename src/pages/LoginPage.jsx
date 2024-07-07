@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/UserContext";
 import { getUsers } from "../api";
-import Loading from "../components/Loading";
+import Loading from "../components/Loading/Loading";
 import "../stylesheets/LoginPage.css";
 
 function LoginPage() {
