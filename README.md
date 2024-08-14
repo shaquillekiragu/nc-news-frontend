@@ -22,10 +22,10 @@ You will need to have these versions or newer for the following technologies in 
 
 **Instructions:**
 
-1. Clone this repository:
+1. Clone this repository by running this command in your terminal:
 
 ```
-https://github.com/shaquillekiragu/nc-news-frontend.git
+git clone https://github.com/shaquillekiragu/nc-news-frontend.git
 ```
 
 2. Next, you'll need to open the cloned repository locally. Run:
