@@ -3,7 +3,7 @@ import "./FilterByTopic.css";
 function FilterByTopic({ handleTopicChange }) {
   return (
     <>
-      <label htmlFor="topics">Filter articles by topic: </label>
+      {/* <label htmlFor="topics">Filter articles by topic: </label> */}
       <select name="topic-options" id="topics" onChange={handleTopicChange}>
         <option value="">All Articles</option>
         <option value="coding">Coding</option>

@@ -46,9 +46,9 @@ function ArticlesList({ articlesList, sortQuery }) {
 
   return (
     <ul>
-      {sortedArticlesList.map((article) => {
+      {sortedArticlesList.map((article, index) => {
         return (
-          <li key={article.article_id}>{<ArticleCard article={article} />}</li>
+          <li key={index}>{<ArticleCard article={article} index={index} />}</li>
         );
       })}
     </ul>

@@ -87,7 +87,7 @@ function LoginPage() {
         <button type="submit">Login</button>
       </form>
       {invalidMsg ? (
-        <span id="invalid-msg">
+        <span id="invalidMsg">
           Invalid username. Please enter in a valid username.
         </span>
       ) : (
