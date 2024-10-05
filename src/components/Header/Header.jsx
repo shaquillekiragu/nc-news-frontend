@@ -19,14 +19,14 @@ function Header() {
     navigate("/");
   }
 
-  const isOnInitialPages =
+  const isOnUserAccounts =
     location.pathname === "/" ||
     location.pathname === "/login" ||
     location.pathname === "/signup"
       ? true
       : false;
 
-  if (isOnInitialPages && isLoggedIn) {
+  if (isOnUserAccounts && isLoggedIn) {
     return (
       <>
         <h1>NC News</h1>
@@ -35,7 +35,7 @@ function Header() {
         </p>
       </>
     );
-  } else if (isOnInitialPages) {
+  } else if (isOnUserAccounts) {
     return <h1>NC News</h1>;
   } else if (isLoggedIn) {
     return (

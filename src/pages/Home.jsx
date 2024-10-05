@@ -5,9 +5,9 @@ import FilterByTopic from "../components/FilterByTopic/FilterByTopic";
 import SortArticles from "../components/SortArticles/SortArticles";
 import ArticlesList from "../components/ArticlesList/ArticlesList";
 import Loading from "../components/Loading/Loading";
-import "../stylesheets/Articles.css";
+import "../stylesheets/Home.css";
 
-function Articles() {
+function Home() {
   const [articlesList, setArticlesList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -69,4 +69,4 @@ function Articles() {
   );
 }
 
-export default Articles;
+export default Home;
