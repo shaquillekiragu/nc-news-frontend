@@ -8,6 +8,7 @@ import LoginAction from "./pages/LoginAction.jsx";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage.jsx";
 import ViewArticle from "./pages/ViewArticle";
+import UserProfile from "./pages/UserProfile";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             path="/articles/:article_id/comments"
             element={<ViewArticle />}
           />
+          <Route path="/users/:user_id" element={<UserProfile />} />
         </Routes>
       </UserProvider>
     </>

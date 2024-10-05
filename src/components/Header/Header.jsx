@@ -11,49 +11,60 @@ function Header() {
     event.preventDefault();
     setAuthUser({});
     setIsLoggedIn(false);
-    navigate("/");
+    navigate("/articles");
   }
 
   function handleSigninClick(event) {
     event.preventDefault();
-    navigate("/");
+    navigate("/login_action");
   }
 
-  const isOnUserAccounts =
-    location.pathname === "/" ||
-    location.pathname === "/login" ||
-    location.pathname === "/signup"
-      ? true
-      : false;
+  function handleProfileClick(event) {
+    event.preventDefault();
+    navigate(`/users/${user_id}`);
+  }
 
-  if (isOnUserAccounts && isLoggedIn) {
+  const isTakingLoginAction =
+    location.pathname === "/login_action" ? true : false;
+
+  if (isTakingLoginAction && isLoggedIn) {
     return (
-      <>
+      <header>
         <h1>NC News</h1>
-        <p className="red-error-message">
-          LOGIN STATE ERROR. PLEASE REFRESH PAGE...
-        </p>
-      </>
+        <p id="redErrorMessage">LOGIN STATE ERROR. PLEASE REFRESH PAGE...</p>
+      </header>
     );
-  } else if (isOnUserAccounts) {
-    return <h1>NC News</h1>;
+  } else if (isTakingLoginAction) {
+    return (
+      <header>
+        <h1>NC News</h1>
+      </header>
+    );
   } else if (isLoggedIn) {
     return (
-      <>
+      <header>
         <h1>NC News</h1>
+        <button onClick={handleProfileClick}>Profile</button>
         <p>User logged in: {authUser.username}</p>
+        <a href="/articles">All Articles</a>
+        <p>Categories:</p>
+        <a href="">Coding</a>
+        <a href="">Football</a>
+        <a href="">Cooking</a>
         <button onClick={handleLogoutClick}>Log Out</button>
-      </>
+      </header>
     );
   } else {
     return (
-      <>
+      <header>
         <h1>NC News</h1>
-        <p>
-          <em>No user signed in</em>
-        </p>
-        <button onClick={handleSigninClick}>Sign In</button>
-      </>
+        <button onClick={handleSigninClick}>Login</button>
+        <a href="/articles">All Articles</a>
+        <p>Categories:</p>
+        <a href="">Coding</a>
+        <a href="">Football</a>
+        <a href="">Cooking</a>
+      </header>
     );
   }
 }

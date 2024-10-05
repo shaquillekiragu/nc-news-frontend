@@ -17,7 +17,7 @@ function ArticleCard({ article, index }) {
     return (
       <>
         <Link to={path}>
-          <section className="topArticleCard">
+          <section className="articleCard topArticleCard">
             <div className="layerOne">
               <p className="item author">Author: {article.author}</p>
               <p className="item topic" id="topicTag">
@@ -51,13 +51,14 @@ function ArticleCard({ article, index }) {
           </section>
         </Link>
         <br />
+        <br />
       </>
     );
   } else if (viewportWidth >= 1024 && index === 1) {
     return (
       <>
         <Link to={path}>
-          <section className="secondArticleCard">
+          <section className="articleCard secondArticleCard">
             <div className="layerOne">
               <p className="item author">Author: {article.author}</p>
               <p className="item topic" id="topicTag">
@@ -86,13 +87,14 @@ function ArticleCard({ article, index }) {
           </section>
         </Link>
         <br />
+        <br />
       </>
     );
   } else {
     return (
       <>
         <Link to={path}>
-          <section className="articleCard">
+          <section className="articleCard otherArticleCards">
             <div className="layerOne">
               <p className="item author">Author: {article.author}</p>
               <p className="item topic" id="topicTag">
@@ -118,6 +120,7 @@ function ArticleCard({ article, index }) {
             </div>
           </section>
         </Link>
+        <br />
         <br />
       </>
     );

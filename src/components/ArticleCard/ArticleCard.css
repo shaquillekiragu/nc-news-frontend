@@ -1,3 +1,15 @@
+.articleCard {
+  border: 1px solid black;
+}
+
+.layerOne,
+.layerTwo,
+.layerThree,
+.layerFour,
+.layerFive {
+  width: 100%;
+}
+
 /* TopArticleCard */
 
 .topArticleCard {
@@ -13,9 +25,11 @@
   margin-left: 6.5vw;
 }
 
-.topArticleCard .layerThree {
-  display: flex;
-  justify-content: space-between;
+@media (min-width: 1024px) {
+  .topArticleCard .layerThree {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .topArticleCard .layerFour,
@@ -37,7 +51,7 @@
 
 /* ArticleCards */
 
-.articleCard {
+.otherArticleCards {
 }
 
 .articleCard .layerOne {
