@@ -1,11 +1,56 @@
+/* TopArticleCard */
+
 .topArticleCard {
 }
+
+.topArticleCard .layerOne,
+.secondArticleCard .layerOne {
+  display: flex;
+}
+
+.topArticleCard .topic,
+.secondArticleCard .topic {
+  margin-left: 6.5vw;
+}
+
+.topArticleCard .layerThree {
+  display: flex;
+  justify-content: space-between;
+}
+
+.topArticleCard .layerFour,
+.secondArticleCard .layerFour {
+  display: flex;
+  justify-content: space-between;
+}
+
+.topArticleCard .layerFive,
+.secondArticleCard .layerFive {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* SecondArticleCard */
 
 .secondArticleCard {
 }
 
+/* ArticleCards */
+
 .articleCard {
 }
+
+.articleCard .layerOne {
+  display: flex;
+  justify-content: space-between;
+}
+
+.articleCard .layerFour {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* Other Styling */
 
 #topicTag {
   color: rgb(70, 64, 64);
