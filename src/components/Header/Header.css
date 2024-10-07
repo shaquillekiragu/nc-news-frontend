@@ -1,3 +1,36 @@
 #redErrorMessage {
   color: red;
 }
+
+.title {
+  white-space: normal;
+}
+
+.errorHeaderContainer,
+.actionHeaderContainer,
+.loggedOutHeaderContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.errorHeaderContainer {
+  gap: 40vw;
+}
+
+.loggedInHeaderContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4vw;
+}
+
+.loggedInHeaderContainer .userStatus {
+  flex-grow: 1;
+}
+
+.loggedOutHeaderContainer {
+  align-items: center;
+  gap: 4vw;
+}

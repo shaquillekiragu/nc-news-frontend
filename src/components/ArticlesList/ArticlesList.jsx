@@ -45,7 +45,7 @@ function ArticlesList({ articlesList, sortQuery }) {
   }
 
   return (
-    <ul>
+    <ul className="gridContainer">
       {sortedArticlesList.map((article, index) => {
         return (
           <li key={article.article_id}>
