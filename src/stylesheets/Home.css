@@ -1,3 +1,9 @@
+.redBannerTwo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 @media (max-width: 639px) {
 }
 

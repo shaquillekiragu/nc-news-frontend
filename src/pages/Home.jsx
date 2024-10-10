@@ -58,13 +58,14 @@ function Home() {
   }
   return (
     <>
-      <h2>Articles</h2>
-      <FilterByTopic handleTopicChange={handleTopicChange} />
+      <div className="redBanners redBannerTwo">
+        <FilterByTopic handleTopicChange={handleTopicChange} />
+        <br />
+        <SortArticles handleSortChange={handleSortChange} />
+      </div>
       <br />
-      <SortArticles handleSortChange={handleSortChange} />
-      <ul>
-        <ArticlesList articlesList={articlesList} sortQuery={sortQuery} />
-      </ul>
+      <h2>Articles</h2>
+      <ArticlesList articlesList={articlesList} sortQuery={sortQuery} />
     </>
   );
 }

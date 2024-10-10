@@ -39,39 +39,63 @@ function Header() {
 
   if (isTakingLoginAction && isLoggedIn) {
     return (
-      <header className="errorHeaderContainer">
-        <h1 className="item title">NC News</h1>
-        <p className="item errorMessage" id="redErrorMessage">
-          LOGIN STATE ERROR. PLEASE REFRESH PAGE...
-        </p>
+      <header>
+        <div className="redBanners redBannerOne"></div>
+        <div className="errorHeaderContainer">
+          <h1 className="item title">
+            <span className="nc">NC</span>
+            <span className="news">News</span>
+          </h1>
+          <p className="item errorMessage" id="redErrorMessage">
+            LOGIN STATE ERROR. PLEASE REFRESH PAGE...
+          </p>
+        </div>
       </header>
     );
   } else if (isTakingLoginAction) {
     return (
-      <header className="actionHeaderContainer">
-        <h1 className="item title">NC News</h1>
+      <header>
+        <div className="topRedBanner"></div>
+        <div className="actionHeaderContainer">
+          <h1 className="item title">
+            <span className="nc">NC</span>
+            <span className="news">News</span>
+          </h1>
+        </div>
       </header>
     );
   } else if (isLoggedIn) {
     return (
-      <header className="loggedInHeaderContainer">
-        <h1 className="item title">NC News</h1>
-        <button className="item profileButton" onClick={handleProfileClick}>
-          Profile
-        </button>
-        <p className="item userStatus">User logged in: {authUser.username}</p>
-        <button className="item logoutButton" onClick={handleLogoutClick}>
-          Log Out
-        </button>
+      <header>
+        <div className="topRedBanner"></div>
+        <div className="loggedInHeaderContainer">
+          <h1 className="item title">
+            <span className="nc">NC</span>
+            <span className="news">News</span>
+          </h1>
+          <button className="item profileButton" onClick={handleProfileClick}>
+            Profile
+          </button>
+          <p className="item userStatus">User logged in: {authUser.username}</p>
+          <button className="item logoutButton" onClick={handleLogoutClick}>
+            Log Out
+          </button>
+        </div>
       </header>
     );
   } else {
     return (
-      <header className="loggedOutHeaderContainer">
-        <h1 className="item title">NC News</h1>
-        <button className="item loginButton" onClick={handleSigninClick}>
-          Login
-        </button>
+      <header>
+        <div className="topRedBanner"></div>
+        <div className="loggedOutHeaderContainer">
+          <h1 className="item title">
+            <span className="nc">NC</span>
+            <span className="news">News</span>
+          </h1>
+          <button className="item loginButton" onClick={handleSigninClick}>
+            Login
+          </button>
+        </div>
       </header>
     );
   }

@@ -1,9 +1,32 @@
+header {
+}
+
+.redBannerOne {
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+}
+
+.nc {
+  color: red;
+}
+
+.news {
+  background-color: red;
+  color: white;
+}
+
 #redErrorMessage {
   color: red;
 }
 
-.title {
-  white-space: normal;
+.errorHeaderContainer,
+.actionHeaderContainer,
+.loggedInHeaderContainer,
+.loggedOutHeaderContainer {
+  height: fit-content;
 }
 
 .errorHeaderContainer,

@@ -2,7 +2,7 @@ import "./SortArticles.css";
 
 function SortArticles({ handleSortChange }) {
   return (
-    <>
+    <span>
       <label htmlFor="sorts">Sort articles by: </label>
       <select name="sort-options" id="sorts" onChange={handleSortChange}>
         <option value="">Newest (Default)</option>
@@ -15,7 +15,7 @@ function SortArticles({ handleSortChange }) {
         <option value="+comment_count">Most Comments</option>
         <option value="-comment_count">Least Comments</option>
       </select>
-    </>
+    </span>
   );
 }
 
