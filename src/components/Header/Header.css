@@ -1,59 +1,58 @@
-header {
-}
-
-.redBannerOne {
-}
-
-.title {
+.headerContainer > .title {
   display: flex;
   flex-direction: column;
+  font-size: 8vh;
 }
 
 .nc {
-  color: red;
+  color: var(--customRed);
+  position: absolute;
+  top: 6vh;
 }
 
 .news {
-  background-color: red;
   color: white;
+  position: absolute;
+  top: 15vh;
 }
 
 #redErrorMessage {
   color: red;
 }
 
-.errorHeaderContainer,
-.actionHeaderContainer,
-.loggedInHeaderContainer,
-.loggedOutHeaderContainer {
-  height: fit-content;
+.errorHeader,
+.takingAction,
+.loggedIn,
+.loggedOut {
+  min-height: fit-content;
+  height: 15vh;
 }
 
-.errorHeaderContainer,
-.actionHeaderContainer,
-.loggedOutHeaderContainer {
+.errorHeader,
+.takingAction,
+.loggedOut {
   width: 100%;
   display: flex;
   justify-content: flex-start;
 }
 
-.errorHeaderContainer {
+.errorHeader {
   gap: 40vw;
 }
 
-.loggedInHeaderContainer {
+.loggedIn {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 4vw;
+  gap: 8vw;
 }
 
-.loggedInHeaderContainer .userStatus {
+.loggedIn .userStatus {
   flex-grow: 1;
 }
 
-.loggedOutHeaderContainer {
+.loggedOut {
   align-items: center;
   gap: 4vw;
 }

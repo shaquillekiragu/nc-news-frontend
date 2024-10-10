@@ -3,11 +3,11 @@ body {
   margin: 0 5vw;
 }
 
-.redBanners {
-  background-color: red;
+.redBanner {
+  background-color: var(--customRed);
   margin: 0;
   width: 100vw;
-  height: 10vh;
+  height: 15vh;
 }
 
 #root {

@@ -57,8 +57,8 @@ function Home() {
     return <Loading page={"Articles"} />;
   }
   return (
-    <>
-      <div className="redBanners redBannerTwo">
+    <main>
+      <div className="redBanner filterSortBanner">
         <FilterByTopic handleTopicChange={handleTopicChange} />
         <br />
         <SortArticles handleSortChange={handleSortChange} />
@@ -66,7 +66,7 @@ function Home() {
       <br />
       <h2>Articles</h2>
       <ArticlesList articlesList={articlesList} sortQuery={sortQuery} />
-    </>
+    </main>
   );
 }
 
