@@ -1,19 +1,21 @@
-.headerContainer > .title {
+.headerContainerTwo {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.nc,
+.news {
   font-size: 8vh;
+  margin: 0;
 }
 
 .nc {
   color: var(--customRed);
-  position: absolute;
-  top: 6vh;
 }
 
 .news {
   color: white;
-  position: absolute;
-  top: 15vh;
 }
 
 #redErrorMessage {
@@ -24,14 +26,14 @@
 .takingAction,
 .loggedIn,
 .loggedOut {
-  min-height: fit-content;
+  width: 100%;
   height: 15vh;
+  min-height: fit-content;
 }
 
 .errorHeader,
 .takingAction,
 .loggedOut {
-  width: 100%;
   display: flex;
   justify-content: flex-start;
 }
@@ -41,18 +43,33 @@
 }
 
 .loggedIn {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 8vw;
 }
 
 .loggedIn .userStatus {
-  flex-grow: 1;
 }
 
 .loggedOut {
-  align-items: center;
-  gap: 4vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 35%;
+}
+
+@media (max-width: 600px) {
+  .loggedOut {
+    gap: 60%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1280px) {
+  .loggedOut {
+  }
+}
+
+@media (min-width: 1281px) {
+  .loggedOut {
+  }
 }

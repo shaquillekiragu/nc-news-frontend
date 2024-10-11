@@ -15,44 +15,38 @@ function ArticleCard({ article, index }) {
 
   if (index === 0) {
     return (
-      <>
-        <Link to={path}>
-          <section className="articleCard topArticleCard">
-            <div className="layerOne">
-              <p className="item author">Author: {article.author}</p>
-              <p className="item topic" id="topicTag">
-                {article.topic}
-              </p>
-            </div>
-            <div className="layerTwo">
-              <h3 className="item title">{article.title}</h3>
-            </div>
-            <div className="layerThree">
-              <img
-                className="item thumbnail"
-                src={article.article_img_url}
-                alt="Article thumbnail"
-              />
-              <p className="item body">
-                {article.body.length <= 500
-                  ? article.body
-                  : `${article.body.slice(0, 501)}...`}
-              </p>
-            </div>
-            <div className="layerFour">
-              <p className="item createdAt">{formattedCreatedAt}</p>
-              <p className="item votes">Upvotes: {article.votes}</p>
-            </div>
-            <div className="layerFive">
-              <p className="item commentCount">
-                Comments: {article.comment_count}
-              </p>
-            </div>
-          </section>
-        </Link>
-        <br />
-        <br />
-      </>
+      <Link to={path}>
+        <section className="articleCard topArticleCard">
+          <div className="layerOne">
+            <p className="author">Author: {article.author}</p>
+            <p className="topic" id="topicTag">
+              {article.topic}
+            </p>
+          </div>
+          <div className="layerTwo">
+            <h3 className="title">{article.title}</h3>
+          </div>
+          <div className="layerThree">
+            <img
+              className="thumbnail"
+              src={article.article_img_url}
+              alt="Article thumbnail"
+            />
+            <p className="body">
+              {article.body.length <= 500
+                ? article.body
+                : `${article.body.slice(0, 501)}...`}
+            </p>
+          </div>
+          <div className="layerFour">
+            <p className="createdAt">{formattedCreatedAt}</p>
+            <p className="votes">Upvotes: {article.votes}</p>
+          </div>
+          <div className="layerFive">
+            <p className="commentCount">Comments: {article.comment_count}</p>
+          </div>
+        </section>
+      </Link>
     );
   } else if (viewportWidth >= 1024 && index === 1) {
     return (
@@ -60,29 +54,27 @@ function ArticleCard({ article, index }) {
         <Link to={path}>
           <section className="articleCard secondArticleCard">
             <div className="layerOne">
-              <p className="item author">Author: {article.author}</p>
-              <p className="item topic" id="topicTag">
+              <p className="author">Author: {article.author}</p>
+              <p className="topic" id="topicTag">
                 {article.topic}
               </p>
             </div>
             <div className="layerTwo">
-              <h3 className="item title">{article.title}</h3>
+              <h3 className="title">{article.title}</h3>
             </div>
             <div className="layerThree">
               <img
-                className="item thumbnail"
+                className="thumbnail"
                 src={article.article_img_url}
                 alt="Article thumbnail"
               />
             </div>
             <div className="layerFour">
-              <p className="item createdAt">{formattedCreatedAt}</p>
-              <p className="item votes">Upvotes: {article.votes}</p>
+              <p className="createdAt">{formattedCreatedAt}</p>
+              <p className="votes">Upvotes: {article.votes}</p>
             </div>
             <div className="layerFive">
-              <p className="item commentCount">
-                Comments: {article.comment_count}
-              </p>
+              <p className="commentCount">Comments: {article.comment_count}</p>
             </div>
           </section>
         </Link>
@@ -96,27 +88,25 @@ function ArticleCard({ article, index }) {
         <Link to={path}>
           <section className="articleCard otherArticleCards">
             <div className="layerOne">
-              <p className="item author">Author: {article.author}</p>
-              <p className="item topic" id="topicTag">
+              <p className="author">Author: {article.author}</p>
+              <p className="topic" id="topicTag">
                 {article.topic}
               </p>
             </div>
             <div className="layerTwo">
-              <h3 className="item title">{article.title}</h3>
+              <h3 className="title">{article.title}</h3>
             </div>
             <div className="layerThree">
               <img
-                className="item thumbnail"
+                className="thumbnail"
                 src={article.article_img_url}
                 alt="Article thumbnail"
               />
             </div>
             <div className="layerFour">
-              <p className="item createdAt">{formattedCreatedAt}</p>
-              <p className="item votes">Upvotes: {article.votes}</p>
-              <p className="item commentCount">
-                Comments: {article.comment_count}
-              </p>
+              <p className="createdAt">{formattedCreatedAt}</p>
+              <p className="votes">Upvotes: {article.votes}</p>
+              <p className="commentCount">Comments: {article.comment_count}</p>
             </div>
           </section>
         </Link>

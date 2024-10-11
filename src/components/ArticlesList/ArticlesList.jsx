@@ -1,4 +1,5 @@
 import ArticleCard from "../ArticleCard/ArticleCard";
+import FirstArticleCard from "../FirstArticleCard/FirstArticleCard";
 import "./ArticlesList.css";
 
 function ArticlesList({ articlesList, sortQuery }) {
@@ -42,10 +43,14 @@ function ArticlesList({ articlesList, sortQuery }) {
         return 0;
       }
     });
+
+    // const topArticle = sortedArticlesList[0];
+    // sortedArticlesList.splice(0, 1);
   }
 
   return (
     <ul className="gridContainer">
+      {/* <FirstArticleCard article={topArticle} /> */}
       {sortedArticlesList.map((article, index) => {
         return (
           <li key={article.article_id}>
