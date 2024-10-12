@@ -54,20 +54,14 @@ function Home() {
   }, [topicQuery, sortQuery]);
 
   if (isLoading) {
-    return (
-      <div className="redBanner">
-        <Loading page={"Articles"} />
-      </div>
-    );
+    return <Loading page={"Articles"} />;
   }
   return (
     <main>
-      <div className="redBanner filterSortBanner">
+      <div className="thinRedBanner filterSortContainer">
         <FilterByTopic handleTopicChange={handleTopicChange} />
-        <br />
         <SortArticles handleSortChange={handleSortChange} />
       </div>
-      <br />
       <h2>Articles</h2>
       <ArticlesList articlesList={articlesList} sortQuery={sortQuery} />
     </main>

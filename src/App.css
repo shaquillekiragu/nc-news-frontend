@@ -7,7 +7,7 @@ body {
   text-align: center;
 }
 
-#topRedBanner {
+.thinRedBanner {
   background-color: var(--customRed);
   width: 100vw;
   height: 5vh;
@@ -16,6 +16,14 @@ body {
 }
 
 .redBanner {
+  background-color: var(--customRed);
+  width: 100vw;
+  height: 10vh;
+  position: relative;
+  left: -5vw;
+}
+
+.thickRedBanner {
   background-color: var(--customRed);
   width: 100vw;
   height: 15vh;
