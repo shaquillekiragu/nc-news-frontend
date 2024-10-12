@@ -40,13 +40,14 @@ function Header() {
   if (isTakingLoginAction && isLoggedIn) {
     return (
       <header>
-        <div className="headerContainerOne errorHeader">
+        <div id="topRedBanner"></div>
+        <div className="errorHeaderContainer">
           <h1 className="nc">NC</h1>
           <p className="errorMessage">
             LOGIN STATE ERROR. PLEASE REFRESH PAGE...
           </p>
         </div>
-        <div className="redBanner headerContainerTwo">
+        <div className="redBanner newsContainer">
           <h1 className="news">News</h1>
         </div>
       </header>
@@ -54,10 +55,11 @@ function Header() {
   } else if (isTakingLoginAction) {
     return (
       <header>
-        <div className="headerContainerOne takingAction">
+        <div id="topRedBanner"></div>
+        <div className="takingActionContainer">
           <h1 className="nc">NC</h1>
         </div>
-        <div className="redBanner headerContainerTwo">
+        <div className="redBanner newsContainer">
           <h1 className="news">News</h1>
         </div>
       </header>
@@ -65,7 +67,8 @@ function Header() {
   } else if (isLoggedIn) {
     return (
       <header>
-        <div className="headerContainerOne loggedIn">
+        <div id="topRedBanner"></div>
+        <div className="loggedInContainer">
           <h1 className="nc">NC</h1>
           <button className="profileButton" onClick={handleProfileClick}>
             Profile
@@ -75,7 +78,7 @@ function Header() {
             Log Out
           </button>
         </div>
-        <div className="redBanner headerContainerTwo">
+        <div className="redBanner newsContainer">
           <h1 className="news">News</h1>
         </div>
       </header>
@@ -83,13 +86,14 @@ function Header() {
   } else {
     return (
       <header>
-        <div className="headerContainerOne loggedOut">
+        <div id="topRedBanner"></div>
+        <div className="loggedOutContainer">
           <h1 className="nc">NC</h1>
           <button className="loginButton" onClick={handleLoginClick}>
             Login
           </button>
         </div>
-        <div className="redBanner headerContainerTwo">
+        <div className="redBanner newsContainer">
           <h1 className="news">News</h1>
         </div>
       </header>
