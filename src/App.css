@@ -3,20 +3,19 @@ body {
   margin: 0 5vw;
 }
 
-.redBanner {
-  background-color: var(--customRed);
-  margin: 0;
-  width: 100vw;
-  height: 15vh;
-}
-
 #root {
-  max-width: 1280px;
-  margin: 0;
   text-align: center;
 }
 
+.redBanner {
+  background-color: var(--customRed);
+  width: 100vw;
+  height: 15vh;
+  position: relative;
+  left: -5vw;
+}
+
 img {
-  max-width: 500px;
+  max-width: 300px;
   height: auto;
 }

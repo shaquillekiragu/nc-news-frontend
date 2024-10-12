@@ -1,3 +1,6 @@
+.headerContainerOne {
+}
+
 .headerContainerTwo {
   display: flex;
   justify-content: flex-start;
@@ -16,18 +19,14 @@
 
 .news {
   color: white;
+  position: relative;
+  right: -5vw;
 }
 
-.loggedOut {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
-  width: 100%;
-  height: 15vh;
-  min-height: fit-content;
-}
-
-.takingAction {
+.loggedOut,
+.takingAction,
+.loggedIn,
+.errorHeader {
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
@@ -37,22 +36,11 @@
 }
 
 .loggedIn {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  width: 100%;
-  height: 15vh;
-  min-height: fit-content;
+  justify-content: space-between !important;
 }
 
 .errorHeader {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
   gap: 40vw;
-  width: 100%;
-  height: 15vh;
-  min-height: fit-content;
 }
 
 .loginButton,
@@ -62,6 +50,17 @@
 .errorMessage {
   margin: 0;
   margin-bottom: 2.5vh;
+}
+
+.profileButton {
+  margin-right: 15vw;
+}
+
+.userStatus {
+}
+
+.logoutButton {
+  margin-left: 10vw;
 }
 
 .errorMessage {
