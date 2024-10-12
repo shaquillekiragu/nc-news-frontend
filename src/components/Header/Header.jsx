@@ -40,9 +40,11 @@ function Header() {
   if (isTakingLoginAction && isLoggedIn) {
     return (
       <header>
-        <div className="headerContainer errorHeader">
+        <div className="headerContainerOne errorHeader">
           <h1 className="nc">NC</h1>
-          <p id="redErrorMessage">LOGIN STATE ERROR. PLEASE REFRESH PAGE...</p>
+          <p className="errorMessage">
+            LOGIN STATE ERROR. PLEASE REFRESH PAGE...
+          </p>
         </div>
         <div className="redBanner headerContainerTwo">
           <h1 className="news">News</h1>
@@ -52,7 +54,7 @@ function Header() {
   } else if (isTakingLoginAction) {
     return (
       <header>
-        <div className="headerContainer takingAction">
+        <div className="headerContainerOne takingAction">
           <h1 className="nc">NC</h1>
         </div>
         <div className="redBanner headerContainerTwo">
@@ -63,7 +65,7 @@ function Header() {
   } else if (isLoggedIn) {
     return (
       <header>
-        <div className="headerContainer loggedIn">
+        <div className="headerContainerOne loggedIn">
           <h1 className="nc">NC</h1>
           <button className="profileButton" onClick={handleProfileClick}>
             Profile
@@ -81,7 +83,7 @@ function Header() {
   } else {
     return (
       <header>
-        <div className="headerContainer loggedOut">
+        <div className="headerContainerOne loggedOut">
           <h1 className="nc">NC</h1>
           <button className="loginButton" onClick={handleLoginClick}>
             Login
