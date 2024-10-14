@@ -85,7 +85,7 @@ function ArticleCard({ article, index }) {
   } else {
     return (
       <>
-        <Link to={path}>
+        <Link className="articleCardLink" to={path}>
           <section className="articleCard otherArticleCards">
             <div className="layerOne">
               <p className="author">Author: {article.author}</p>

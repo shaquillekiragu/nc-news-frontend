@@ -1,6 +1,12 @@
+.articleCardLink {
+  width: 100%;
+  height: 100%;
+}
+
 .articleCard {
-  border: 1px solid black;
-  padding: 0 2vw;
+  background-color: rgb(243, 243, 243);
+  width: 100%;
+  height: 100%;
 }
 
 .layerOne,
@@ -10,8 +16,6 @@
 .layerFive {
   width: 100%;
 }
-
-/* TopArticleCard */
 
 .topArticleCard {
 }
@@ -45,27 +49,21 @@
   justify-content: flex-end;
 }
 
-/* SecondArticleCard */
-
 .secondArticleCard {
 }
-
-/* ArticleCards */
 
 .otherArticleCards {
 }
 
-.articleCard .layerOne {
+.otherArticleCards .layerOne {
   display: flex;
   justify-content: space-between;
 }
 
-.articleCard .layerFour {
+.otherArticleCards .layerFour {
   display: flex;
   justify-content: space-evenly;
 }
-
-/* Other Styling */
 
 #topicTag {
   color: rgb(70, 64, 64);

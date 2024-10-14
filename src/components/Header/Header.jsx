@@ -40,7 +40,6 @@ function Header() {
   if (isTakingLoginAction && isLoggedIn) {
     return (
       <header>
-        <div className="thinRedBanner"></div>
         <div className="errorHeaderContainer">
           <h1 className="nc">NC</h1>
           <p className="errorMessage">
@@ -55,7 +54,6 @@ function Header() {
   } else if (isTakingLoginAction) {
     return (
       <header>
-        <div className="thinRedBanner"></div>
         <div className="takingActionContainer">
           <h1 className="nc">NC</h1>
         </div>
@@ -67,7 +65,6 @@ function Header() {
   } else if (isLoggedIn) {
     return (
       <header>
-        <div className="thinRedBanner"></div>
         <div className="loggedInContainer">
           <h1 className="nc">NC</h1>
           <button className="profileButton" onClick={handleProfileClick}>
@@ -86,7 +83,6 @@ function Header() {
   } else {
     return (
       <header>
-        <div className="thinRedBanner"></div>
         <div className="loggedOutContainer">
           <h1 className="nc">NC</h1>
           <button className="loginButton" onClick={handleLoginClick}>
