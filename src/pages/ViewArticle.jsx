@@ -32,7 +32,11 @@ function ViewArticle() {
   }, []);
 
   if (isLoading) {
-    return <Loading page={"Article"} />;
+    return (
+      <div className="thinRedBanner">
+        <Loading page={"Article"} />
+      </div>
+    );
   }
   return (
     <>
