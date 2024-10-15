@@ -29,7 +29,8 @@ function Header() {
 
   useEffect(() => {
     setIsTakingLoginAction(
-      location.pathname === "/login_action" ||
+      location.pathname === "/" ||
+        location.pathname === "/login_action" ||
         location.pathname === "/login" ||
         location.pathname === "/signup"
         ? true
@@ -46,7 +47,7 @@ function Header() {
             LOGIN STATE ERROR. PLEASE REFRESH PAGE...
           </p>
         </div>
-        <div className="redBanner newsContainer">
+        <div className="thickRedBanner newsContainer">
           <h1 className="news">News</h1>
         </div>
       </header>
@@ -57,7 +58,7 @@ function Header() {
         <div className="takingActionContainer">
           <h1 className="nc">NC</h1>
         </div>
-        <div className="redBanner newsContainer">
+        <div className="thickRedBanner newsContainer">
           <h1 className="news">News</h1>
         </div>
       </header>

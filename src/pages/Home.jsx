@@ -54,7 +54,11 @@ function Home() {
   }, [topicQuery, sortQuery]);
 
   if (isLoading) {
-    return <Loading page={"Articles"} />;
+    return (
+      <div className="thinRedBanner">
+        <Loading page={"Articles"} />
+      </div>
+    );
   }
   return (
     <main>
