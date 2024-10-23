@@ -71,7 +71,9 @@ function Header() {
           <button className="profileButton" onClick={handleProfileClick}>
             Profile
           </button>
-          <p className="userStatus">User logged in: {authUser.username}</p>
+          <p className="userStatus">
+            User logged in: <span>{authUser.username}</span>
+          </p>
           <button className="logoutButton" onClick={handleLogoutClick}>
             Log Out
           </button>

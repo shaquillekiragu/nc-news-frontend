@@ -12,12 +12,14 @@
 
 .nc {
   color: var(--customRed);
+  position: relative;
+  left: 3.5vw;
 }
 
 .news {
   color: white;
   position: relative;
-  right: -5vw;
+  left: 8.5vw;
 }
 
 .loggedOutContainer,
@@ -53,11 +55,13 @@
   margin-right: 15vw;
 }
 
-.userStatus {
+.userStatus span {
+  color: var(--customRed);
 }
 
 .logoutButton {
-  margin-left: 10vw;
+  position: relative;
+  right: 5vw;
 }
 
 .errorMessage {

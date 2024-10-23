@@ -48,7 +48,7 @@ function ArticleCard({ article, index }) {
         </section>
       </Link>
     );
-  } else if (viewportWidth >= 1024 && index === 1) {
+  } else if (viewportWidth > 1280 && index === 1) {
     return (
       <>
         <Link to={path}>
