@@ -9,6 +9,7 @@ import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage.jsx";
 import ViewArticle from "./pages/ViewArticle";
 import UserProfile from "./pages/UserProfile";
+import Footer from "./components/Footer/Footer.jsx";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           />
           <Route path="/users/:user_id" element={<UserProfile />} />
         </Routes>
+        <Footer />
       </UserProvider>
     </>
   );
