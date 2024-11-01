@@ -28,12 +28,11 @@
 }
 
 .topArticleCard .layerOne,
-.secondArticleCard .layerOne {
+.layerOne {
   display: flex;
 }
 
-.topArticleCard .topic,
-.secondArticleCard .topic {
+.topArticleCard .topic {
   margin-left: 6.5vw;
 }
 
@@ -44,19 +43,14 @@
   }
 }
 
-.topArticleCard .layerFour,
-.secondArticleCard .layerFour {
+.topArticleCard .layerFour {
   display: flex;
   justify-content: space-between;
 }
 
-.topArticleCard .layerFive,
-.secondArticleCard .layerFive {
+.topArticleCard .layerFive {
   display: flex;
   justify-content: flex-end;
-}
-
-.secondArticleCard {
 }
 
 .otherArticleCards {

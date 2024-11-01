@@ -7,6 +7,14 @@ body {
   text-align: center;
 }
 
+/* .veryThinRedBanner {
+  background-color: var(--customRed);
+  width: 100vw;
+  height: 1vh;
+  position: relative;
+  left: -5vw;
+} */
+
 .thinRedBanner {
   background-color: var(--customRed);
   width: 100vw;

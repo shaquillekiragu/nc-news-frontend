@@ -66,7 +66,6 @@ function Header() {
   } else if (isLoggedIn) {
     return (
       <header>
-        <div className="thinRedBanner"></div>
         <div className="loggedInContainer">
           <h1 className="nc">NC</h1>
           <button className="profileButton" onClick={handleProfileClick}>
