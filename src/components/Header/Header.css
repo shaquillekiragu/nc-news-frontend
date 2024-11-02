@@ -4,6 +4,10 @@
   align-items: flex-start;
 }
 
+.headerTitleLink {
+  text-decoration: none;
+}
+
 .nc,
 .news {
   font-size: 8vh;
@@ -49,6 +53,13 @@
 .errorMessage {
   margin: 0;
   margin-bottom: 2.5vh;
+}
+
+@media (min-width: 1281px) {
+  .loginButton {
+    position: relative;
+    left: 3vw;
+  }
 }
 
 .profileButton {

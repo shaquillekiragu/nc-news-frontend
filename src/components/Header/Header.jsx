@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useAuth } from "../../contexts/UserContext";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import "./Header.css";
 
 function Header() {
@@ -42,13 +42,17 @@ function Header() {
     return (
       <header>
         <div className="errorHeaderContainer">
-          <h1 className="nc">NC</h1>
+          <Link className="headerTitleLink" to="/articles">
+            <h1 className="nc">NC</h1>
+          </Link>
           <p className="errorMessage">
             LOGIN STATE ERROR. PLEASE REFRESH PAGE...
           </p>
         </div>
         <div className="thickRedBanner newsContainer">
-          <h1 className="news">News</h1>
+          <Link className="headerTitleLink" to="/articles">
+            <h1 className="news">News</h1>
+          </Link>
         </div>
       </header>
     );
@@ -56,10 +60,14 @@ function Header() {
     return (
       <header>
         <div className="takingActionContainer">
-          <h1 className="nc">NC</h1>
+          <Link className="headerTitleLink" to="/articles">
+            <h1 className="nc">NC</h1>
+          </Link>
         </div>
         <div className="thickRedBanner newsContainer">
-          <h1 className="news">News</h1>
+          <Link className="headerTitleLink" to="/articles">
+            <h1 className="news">News</h1>
+          </Link>
         </div>
       </header>
     );
@@ -67,7 +75,9 @@ function Header() {
     return (
       <header>
         <div className="loggedInContainer">
-          <h1 className="nc">NC</h1>
+          <Link className="headerTitleLink" to="/articles">
+            <h1 className="nc">NC</h1>
+          </Link>
           <button className="profileButton" onClick={handleProfileClick}>
             Profile
           </button>
@@ -79,7 +89,9 @@ function Header() {
           </button>
         </div>
         <div className="redBanner newsContainer">
-          <h1 className="news">News</h1>
+          <Link className="headerTitleLink" to="/articles">
+            <h1 className="news">News</h1>
+          </Link>
         </div>
       </header>
     );
@@ -87,13 +99,17 @@ function Header() {
     return (
       <header>
         <div className="loggedOutContainer">
-          <h1 className="nc">NC</h1>
+          <Link className="headerTitleLink" to="/articles">
+            <h1 className="nc">NC</h1>
+          </Link>
           <button className="loginButton" onClick={handleLoginClick}>
             Login
           </button>
         </div>
         <div className="redBanner newsContainer">
-          <h1 className="news">News</h1>
+          <Link className="headerTitleLink" to="/articles">
+            <h1 className="news">News</h1>
+          </Link>
         </div>
       </header>
     );

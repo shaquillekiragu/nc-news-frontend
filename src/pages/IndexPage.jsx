@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import "../stylesheets/InitialPage.css";
+import "../stylesheets/IndexPage.css";
 
-function InitialPage() {
+function IndexPage() {
   const navigate = useNavigate();
 
   return (
@@ -19,4 +19,4 @@ function InitialPage() {
   );
 }
 
-export default InitialPage;
+export default IndexPage;

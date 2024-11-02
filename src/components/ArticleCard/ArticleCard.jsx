@@ -39,10 +39,10 @@ function ArticleCard({ article, index }) {
             </p>
           </div>
           <div className="layerFour">
-            <p className="createdAt">{formattedCreatedAt}</p>
             <p className="votes">Upvotes: {article.votes}</p>
           </div>
           <div className="layerFive">
+            <p className="createdAt">{formattedCreatedAt}</p>
             <p className="commentCount">Comments: {article.comment_count}</p>
           </div>
         </section>

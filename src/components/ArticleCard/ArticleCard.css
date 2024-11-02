@@ -31,6 +31,7 @@
 
 .author {
   margin-left: 1vw;
+  color: var(--customRed);
 }
 
 .topic {
@@ -40,25 +41,28 @@
 .topArticleCard {
 }
 
-.author {
-  color: var(--customRed);
-}
-
 @media (min-width: 1281px) {
   .topArticleCard .layerThree {
     display: flex;
     justify-content: space-between;
   }
+  .createdAt {
+    margin-left: 1vw;
+  }
+  .votes,
+  .commentCount {
+    margin-right: 1vw;
+  }
 }
 
 .topArticleCard .layerFour {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .topArticleCard .layerFive {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .otherArticleCards {

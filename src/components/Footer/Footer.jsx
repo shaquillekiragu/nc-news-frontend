@@ -9,9 +9,9 @@ function Footer() {
   useEffect(() => {
     setIsOnInitialPages(
       location.pathname === "/" ||
-        location.pathname === "login_action" ||
+        location.pathname === "/login_action" ||
         location.pathname === "/login" ||
-        location.pathname === "signup"
+        location.pathname === "/signup"
         ? true
         : false
     );

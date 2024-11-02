@@ -2,7 +2,7 @@ import UserProvider from "./contexts/UserContext.jsx";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header/Header.jsx";
-import InitialPage from "./pages/InitialPage.jsx";
+import IndexPage from "./pages/IndexPage.jsx";
 import Home from "./pages/Home.jsx";
 import LoginAction from "./pages/LoginAction.jsx";
 import LoginPage from "./pages/LoginPage";
@@ -17,7 +17,7 @@ function App() {
       <UserProvider>
         <Header />
         <Routes>
-          <Route path="/" element={<InitialPage />} />
+          <Route path="/" element={<IndexPage />} />
           <Route path="/articles" element={<Home />} />
           <Route path="/login_action" element={<LoginAction />} />
           <Route path="/login" element={<LoginPage />} />
