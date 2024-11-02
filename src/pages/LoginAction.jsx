@@ -13,6 +13,7 @@ function LoginAction() {
 
   return (
     <>
+      <div className="thinRedBanner"></div>
       <p>Welcome to NC News!</p>
       <button onClick={handleLoginClick}>Login</button>
       <button onClick={handleSignupClick}>Sign Up!</button>

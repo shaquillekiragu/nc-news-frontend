@@ -24,16 +24,24 @@
   width: 100%;
 }
 
+.layerOne {
+  display: flex;
+  justify-content: space-between;
+}
+
+.author {
+  margin-left: 1vw;
+}
+
+.topic {
+  margin-right: 1vw;
+}
+
 .topArticleCard {
 }
 
-.topArticleCard .layerOne,
-.layerOne {
-  display: flex;
-}
-
-.topArticleCard .topic {
-  margin-left: 6.5vw;
+.author {
+  color: var(--customRed);
 }
 
 @media (min-width: 1281px) {
@@ -56,11 +64,6 @@
 .otherArticleCards {
 }
 
-.otherArticleCards .layerOne {
-  display: flex;
-  justify-content: space-between;
-}
-
 .otherArticleCards .layerFour {
   display: flex;
   justify-content: space-evenly;
@@ -68,5 +71,4 @@
 
 #topicTag {
   color: rgb(70, 64, 64);
-  text-decoration: none;
 }

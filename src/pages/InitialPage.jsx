@@ -6,6 +6,7 @@ function InitialPage() {
 
   return (
     <>
+      <div className="thinRedBanner"></div>
       <p>WELCOME TO NC News!</p>
       <button
         onClick={() => {

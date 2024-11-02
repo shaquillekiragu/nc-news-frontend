@@ -1,8 +1,7 @@
 .filterSortContainer {
   display: flex;
   justify-content: space-around;
-  align-items: flex-start;
-  height: 5vh;
+  align-items: center;
 }
 
 @media (max-width: 600px) {

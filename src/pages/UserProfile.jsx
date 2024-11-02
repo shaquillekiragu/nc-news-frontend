@@ -6,9 +6,10 @@ function UserProfile() {
   const [isLoading, setIsLoading] = useState(true);
   if (isLoading) {
     return (
-      <div className="thinRedBanner">
+      <>
+        <div className="thinRedBanner"></div>
         <Loading page={"Profile page"} />
-      </div>
+      </>
     );
   }
 }

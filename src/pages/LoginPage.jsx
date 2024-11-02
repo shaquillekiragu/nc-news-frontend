@@ -61,6 +61,7 @@ function LoginPage() {
   }
   return (
     <>
+      <div className="thinRedBanner"></div>
       <p>Welcome to NC News!</p>
       <h3>Login:</h3>
       <form onSubmit={handleSubmit}>

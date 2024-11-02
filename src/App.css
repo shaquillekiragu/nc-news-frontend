@@ -18,9 +18,10 @@ body {
 .thinRedBanner {
   background-color: var(--customRed);
   width: 100vw;
-  height: 5vh;
+  height: 6vh;
   position: relative;
   left: -5vw;
+  border-top: 1px solid white;
 }
 
 .redBanner {

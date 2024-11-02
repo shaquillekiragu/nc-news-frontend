@@ -11,14 +11,14 @@ function ArticleCard({ article, index }) {
     viewportWidth = window.innerWidth;
   });
 
-  const formattedCreatedAt = new Date(article.created_at).toLocaleString();
+  const formattedCreatedAt = new Date(article.created_at).toLocaleDateString();
 
   if (index === 0) {
     return (
       <Link className="articleCardLink" to={path}>
         <section className="articleCard topArticleCard">
           <div className="layerOne">
-            <p className="author">Author: {article.author}</p>
+            <p className="author">{article.author}</p>
             <p className="topic" id="topicTag">
               {article.topic}
             </p>
@@ -53,7 +53,7 @@ function ArticleCard({ article, index }) {
       <Link className="articleCardLink" to={path}>
         <section className="articleCard otherArticleCards">
           <div className="layerOne">
-            <p className="author">Author: {article.author}</p>
+            <p className="author">{article.author}</p>
             <p className="topic" id="topicTag">
               {article.topic}
             </p>

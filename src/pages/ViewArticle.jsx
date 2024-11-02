@@ -40,6 +40,7 @@ function ViewArticle() {
   }
   return (
     <>
+      <div className="thinRedBanner"></div>
       <h2>Article</h2>
       <h3>{article.title}</h3>
       <p>

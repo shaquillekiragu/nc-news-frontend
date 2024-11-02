@@ -70,6 +70,7 @@ function SignUpPage() {
   }
   return (
     <>
+      <div className="thinRedBanner"></div>
       <p>Welcome to NC News!</p>
       <SignUpForm
         handleSubmit={handleSubmit}
