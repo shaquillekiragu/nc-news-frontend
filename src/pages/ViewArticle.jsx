@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getArticle } from "../api";
 import PatchArticleVotes from "../components/PatchArticleVotes/PatchArticleVotes";
 import Comments from "../components/CommentsList/CommentsList";
+import SimilarArticles from "../components/SimilarArticles/SimilarArticles";
 import Loading from "../components/Loading/Loading";
 import "../stylesheets/ViewArticle.css";
 
@@ -39,31 +40,37 @@ function ViewArticle() {
     );
   }
   return (
-    <>
-      <div className="thinRedBanner"></div>
-      <h2>Article</h2>
-      <h3>{article.title}</h3>
-      <p>
-        Written by: <strong>{article.author}</strong>
-      </p>
-      <p>
-        Topic: <strong>{article.topic}</strong>
-      </p>
-      <img src={article.article_img_url} alt="Article thumbnail" />
-      <p>{article.body}</p>
-      <p>
-        Votes: <strong>{voteCount}</strong>
-      </p>
-      <PatchArticleVotes
-        setVoteCount={setVoteCount}
-        article={article}
-        article_id={article_id}
+    <div className="articleGridContainer">
+      <article>
+        <div className="thinRedBanner"></div>
+        <h2>Article</h2>
+        <h3>{article.title}</h3>
+        <p>
+          Written by: <strong>{article.author}</strong>
+        </p>
+        <p>
+          Topic: <strong>{article.topic}</strong>
+        </p>
+        <img src={article.article_img_url} alt="Article thumbnail" />
+        <p>{article.body}</p>
+        <p>
+          Votes: <strong>{voteCount}</strong>
+        </p>
+        <PatchArticleVotes
+          setVoteCount={setVoteCount}
+          article={article}
+          article_id={article_id}
+        />
+        <p>
+          Created at: <strong>{article.created_at}</strong>
+        </p>
+        <Comments article_id={article_id} />
+      </article>
+      <SimilarArticles
+        articleTopic={article.topic}
+        selectedArticleId={article_id}
       />
-      <p>
-        Created at: <strong>{article.created_at}</strong>
-      </p>
-      <Comments article_id={article_id} />
-    </>
+    </div>
   );
 }
 
