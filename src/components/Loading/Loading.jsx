@@ -2,13 +2,12 @@ import "./Loading.css";
 
 function Loading({ page }) {
   return (
-    <>
-      <br />
+    <div className="loadingContainer">
       <div className="loadingAnimation loader"></div>
       <p>
         <em>{page} loading...</em>
       </p>
-    </>
+    </div>
   );
 }
 

@@ -1,5 +1,9 @@
 /* Source: https://css-loaders.com/spinner/ (CSS Loaders) */
 
+.loadingContainer {
+  margin: 5vh 0 75vh 0;
+}
+
 .loadingAnimation {
   display: flex;
   justify-content: center;

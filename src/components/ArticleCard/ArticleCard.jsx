@@ -48,6 +48,36 @@ function ArticleCard({ article, index }) {
         </section>
       </Link>
     );
+  } else if (viewportWidth > 700 && viewportWidth <= 900) {
+    return (
+      <Link className="articleCardLink" to={path}>
+        <section className="articleCard topArticleCard">
+          <div className="layerOne">
+            <p className="author">{article.author}</p>
+            <p className="topic" id="topicTag">
+              {article.topic}
+            </p>
+          </div>
+          <div className="layerTwo">
+            <h3 className="title">{article.title}</h3>
+          </div>
+          <div className="layerThree">
+            <img
+              className="thumbnail"
+              src={article.article_img_url}
+              alt="Article thumbnail"
+            />
+          </div>
+          <div className="layerFour">
+            <p className="votes">Upvotes: {article.votes}</p>
+          </div>
+          <div className="layerFive">
+            <p className="createdAt">{formattedCreatedAt}</p>
+            <p className="commentCount">Comments: {article.comment_count}</p>
+          </div>
+        </section>
+      </Link>
+    );
   } else {
     return (
       <Link className="articleCardLink" to={path}>
