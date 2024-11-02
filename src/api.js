@@ -55,9 +55,6 @@ export function patchCommentVoteCount(
   comment_id,
   inc_comment_votes
 ) {
-  console.log(article_id, "api article_id");
-  console.log(comment_id, "api comment_id");
-  console.log(inc_comment_votes, "api inc_comment_votes");
   return axios.patch(
     `https://news-webpage-project.onrender.com/api/articles/${article_id}/comments/${comment_id}`,
     {

@@ -13,10 +13,6 @@ function ViewArticle() {
   const [voteCount, setVoteCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
-  if (article_id === undefined) {
-    console.log("Invalid article id");
-  }
-
   useEffect(() => {
     async function fetchArticleView() {
       try {

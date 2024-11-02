@@ -23,19 +23,11 @@ function SimiliarArticles({ articleTopic, selectedArticleId }) {
     fetchSimilarArticles();
   }, []);
 
-  console.log(similarArticlesList, "similarArticlesList");
-  console.log(selectedArticleId, "selectedArticleId");
-
   const filteredList = similarArticlesList.filter((article) => {
-    console.log(article.article_id, "article_id");
     return Number(article.article_id) !== Number(selectedArticleId);
   });
 
-  console.log(filteredList, "filteredList");
-
   const displayedSimilarArticlesList = filteredList.slice(0, 5);
-
-  console.log(displayedSimilarArticlesList, "displayedSimilarArticlesList");
 
   if (isLoading) {
     return (

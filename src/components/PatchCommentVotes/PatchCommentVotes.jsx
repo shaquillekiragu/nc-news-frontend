@@ -5,7 +5,6 @@ function PatchArticleVotes({ comment, article_id, setCommentVoteCount }) {
   async function handleCommentUpvoteClick(event) {
     try {
       event.preventDefault();
-      console.log(comment.comment_id, "comment_id");
       let inc_comment_votes = 0;
       setCommentVoteCount((currentCommentVoteCount) => {
         if (currentCommentVoteCount !== comment.votes + 1) {
@@ -14,15 +13,11 @@ function PatchArticleVotes({ comment, article_id, setCommentVoteCount }) {
         }
         return currentCommentVoteCount;
       });
-      console.log(article_id, "<< article_id");
-      console.log(comment.comment_id, "<< comment_id");
-      console.log(inc_comment_votes, "<< inc_comment_votes");
       await patchCommentVoteCount(
         article_id,
         comment.comment_id,
         inc_comment_votes
       );
-      console.log("hello");
     } catch (err) {
       console.error(err);
     }
@@ -39,9 +34,6 @@ function PatchArticleVotes({ comment, article_id, setCommentVoteCount }) {
         }
         return currentCommentVoteCount;
       });
-      console.log(article_id, "<< article_id");
-      console.log(comment.comment_id, "<< comment_id");
-      console.log(inc_comment_votes, "<< inc_comment_votes");
       await patchCommentVoteCount(
         article_id,
         comment.comment_id,

@@ -47,8 +47,6 @@ function LoginPage() {
     if (isValidUsername) {
       setAuthUser({ username: username });
       setIsLoggedIn(true);
-      console.log(authUser, "authUser");
-      console.log(isLoggedIn, "isLoggedIn");
       setInvalidMsg(false);
       navigate("/articles");
     } else {
