@@ -5,6 +5,7 @@ import FilterByTopic from "../components/FilterByTopic/FilterByTopic";
 import SortArticles from "../components/SortArticles/SortArticles";
 import ArticlesList from "../components/ArticlesList/ArticlesList";
 import Loading from "../components/Loading/Loading";
+import Footer from "../components/Footer/Footer";
 import "../stylesheets/Home.css";
 
 function Home() {
@@ -67,6 +68,7 @@ function Home() {
         <SortArticles handleSortChange={handleSortChange} />
       </div>
       <ArticlesList articlesList={articlesList} sortQuery={sortQuery} />
+      <Footer />
     </main>
   );
 }
