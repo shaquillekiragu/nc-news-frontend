@@ -16,6 +16,13 @@
   height: 100%;
 }
 
+.topArticleLabel {
+  position: relative;
+  top: 2.5vh;
+}
+
+/* All article cards */
+
 .layerOne,
 .layerTwo,
 .layerThree,
@@ -27,6 +34,11 @@
 .layerOne {
   display: flex;
   justify-content: space-between;
+}
+
+.layerFour {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 @media (max-width: 700px) {
@@ -67,7 +79,18 @@
   }
 }
 
-.topArticleCard {
+/* Top article card */
+
+@media (min-width: 851px) {
+  .topArticleCard .layerThree {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .topArticleCard .thumbnail,
+  .topArticleCard .body {
+    max-width: 50%;
+  }
 }
 
 .topArticleCard .layerFour {
@@ -80,10 +103,30 @@
   justify-content: space-between;
 }
 
-.otherArticleCards {
+.topArticleCard .thumbnail {
+  margin: 0 1vw 0 2.5vw;
 }
 
-.otherArticleCards .layerFour {
-  display: flex;
-  justify-content: space-evenly;
+.topArticleCard .body {
+  font-size: 0.9rem;
+  margin: 0 2.5vw 0 1vw;
+}
+
+@media (max-width: 850px) {
+  .topArticleCard .thumbnail {
+    margin: 0 1vw 1vw 2.5vw;
+  }
+  .topArticleCard .body {
+    font-size: 0.9rem;
+    margin: 1vw 2.5vw 0 1vw;
+  }
+}
+
+.topArticleCard .createdAt {
+  margin-left: 2vw;
+}
+
+.topArticleCard .votes,
+.topArticleCard .commentCount {
+  margin-right: 2vw;
 }

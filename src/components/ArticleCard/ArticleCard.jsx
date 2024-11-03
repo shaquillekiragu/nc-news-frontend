@@ -20,6 +20,7 @@ function ArticleCard({ article, index }) {
     return (
       <Link className="articleCardLink" to={path}>
         <section className="articleCard topArticleCard">
+          <h3 className="topArticleLabel">Top Article</h3>
           <div className="layerOne">
             <p className="author">{article.author}</p>
             <p className="topic">{article.topic}</p>
@@ -36,7 +37,7 @@ function ArticleCard({ article, index }) {
             <p className="body">
               {article.body.length <= 500
                 ? article.body
-                : `${article.body.slice(0, 501)}...`}
+                : `${article.body.slice(0, 251)}...`}
             </p>
           </div>
           <div className="layerFour">
