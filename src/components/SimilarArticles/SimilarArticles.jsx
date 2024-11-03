@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import ArticleCard from "../ArticleCard/ArticleCard";
 import Loading from "../Loading/Loading";
 import getArticles from "../../api";
 import "./SimilarArticles.css";
 
-function SimiliarArticles({ articleTopic, selectedArticleId }) {
+function SimiliarArticles({ articleTopic }) {
   const [similarArticlesList, setSimilarArticlesList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  const { article_id } = useParams();
+  const selectedArticleId = article_id;
 
   useEffect(() => {
     async function fetchSimilarArticles() {
@@ -22,7 +26,7 @@ function SimiliarArticles({ articleTopic, selectedArticleId }) {
       }
     }
     fetchSimilarArticles();
-  }, []);
+  }, [selectedArticleId]);
 
   const filteredList = similarArticlesList.filter((article) => {
     return Number(article.article_id) !== Number(selectedArticleId);

@@ -1,15 +1,22 @@
 /* Source: https://css-loaders.com/spinner/ (CSS Loaders) */
 
 .loadingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
   margin-top: 5vh;
 }
 
-.loadingAnimation {
-  display: flex;
-  justify-content: center;
+.loadingContainer p {
+  position: relative;
+  top: -15vh;
+  left: -5vw;
 }
 
 .loader {
+  position: relative;
+  top: -25vh;
   width: 50px;
   --b: 8px;
   aspect-ratio: 1;

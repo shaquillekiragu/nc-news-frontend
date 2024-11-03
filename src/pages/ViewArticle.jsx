@@ -63,10 +63,7 @@ function ViewArticle() {
           </p>
           <Comments article_id={article_id} />
         </article>
-        <SimilarArticles
-          articleTopic={article.topic}
-          selectedArticleId={article_id}
-        />
+        <SimilarArticles articleTopic={article.topic} />
       </div>
       <Footer />
     </>
