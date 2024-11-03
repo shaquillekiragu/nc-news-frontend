@@ -20,7 +20,7 @@ function ArticleCard({ article, index }) {
     return (
       <Link className="articleCardLink" to={path}>
         <section className="articleCard topArticleCard">
-          <h3 className="topArticleLabel">Top Article</h3>
+          <h3 className="topArticleLabel">TOP ARTICLE</h3>
           <div className="layerOne">
             <p className="author">{article.author}</p>
             <p className="topic">{article.topic}</p>

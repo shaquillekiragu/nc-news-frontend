@@ -1,7 +1,7 @@
 /* Source: https://css-loaders.com/spinner/ (CSS Loaders) */
 
 .loadingContainer {
-  margin: 5vh 0 75vh 0;
+  margin-top: 5vh;
 }
 
 .loadingAnimation {
