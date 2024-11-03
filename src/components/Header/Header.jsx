@@ -107,7 +107,7 @@ function Header() {
         </div>
         <div className="redBanner newsContainer">
           <Link className="headerTitleLink" to="/articles">
-            <h1 className="news">News</h1>
+            <h1 className="news">NEWS</h1>
           </Link>
         </div>
       </header>

@@ -1,10 +1,14 @@
+#root {
+  text-align: center;
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 0 5vw;
 }
 
-#root {
-  text-align: center;
+.title {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .thinRedBanner {
@@ -34,7 +38,5 @@ body {
 
 img {
   width: 80%;
-  max-width: 250px;
-  max-height: 250px;
   object-fit: contain;
 }

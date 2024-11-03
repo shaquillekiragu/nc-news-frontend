@@ -7,11 +7,10 @@ function ArticleCard({ article, index }) {
   const path = `/articles/${pathId}`;
 
   const [viewportWidth, setViewportWidth] = useState(null);
+  window.addEventListener("resize", function () {});
 
   useEffect(() => {
-    window.addEventListener("resize", function () {
-      setViewportWidth(window.innerWidth);
-    });
+    setViewportWidth(window.innerWidth);
   }, [window.innerWidth]);
 
   const formattedCreatedAt = new Date(article.created_at).toLocaleDateString();

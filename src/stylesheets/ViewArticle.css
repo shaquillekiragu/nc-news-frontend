@@ -10,3 +10,12 @@
 .similarArticles {
   grid-column: 3 / 4;
 }
+
+.articleTitle {
+  margin-top: 8vh;
+  font-size: 2.5rem;
+}
+
+.articleBody {
+  margin-bottom: 10vh;
+}

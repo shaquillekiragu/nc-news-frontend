@@ -31,7 +31,6 @@ function CommentsList({ article_id }) {
       <p>
         Comments: <strong>{commentsList.length}</strong>
       </p>
-      <br />
       <h2>Comments:</h2>
       <PostComment article_id={article_id} />
       <ul>

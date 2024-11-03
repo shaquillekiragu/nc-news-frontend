@@ -21,6 +21,11 @@
   top: 2.5vh;
 }
 
+.thumbnail {
+  max-width: 250px;
+  max-height: 250px;
+}
+
 /* ALL ARTICLE CARDS */
 
 .layerOne,
@@ -40,6 +45,10 @@
   .title {
     font-size: 1rem;
   }
+}
+
+.title {
+  font-size: 1.4rem;
 }
 
 .author,

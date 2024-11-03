@@ -27,7 +27,10 @@ function ViewArticle() {
       }
     }
     fetchArticleView();
-  }, []);
+  }, [article_id]);
+
+  const formattedDate = new Date(article.created_at).toLocaleDateString();
+  const formattedTime = new Date(article.created_at).toLocaleTimeString();
 
   if (isLoading) {
     return (
@@ -41,15 +44,13 @@ function ViewArticle() {
       <div className="articleGridContainer">
         <article>
           <div className="thinRedBanner"></div>
-          <h3>{article.title}</h3>
-          <p>
-            Written by: <strong>{article.author}</strong>
-          </p>
-          <p>
-            Topic: <strong>{article.topic}</strong>
-          </p>
+          <h3 className="articleTitle title">{article.title}</h3>
           <img src={article.article_img_url} alt="Article thumbnail" />
-          <p>{article.body}</p>
+          <p>{article.author}</p>
+          <p>{article.topic}</p>
+          <p>
+            {formattedDate} {formattedTime}
+          </p>
           <p>
             Votes: <strong>{voteCount}</strong>
           </p>
@@ -58,9 +59,7 @@ function ViewArticle() {
             article={article}
             article_id={article_id}
           />
-          <p>
-            Created at: <strong>{article.created_at}</strong>
-          </p>
+          <p className="articleBody">{article.body}</p>
           <Comments article_id={article_id} />
         </article>
         <SimilarArticles articleTopic={article.topic} />
