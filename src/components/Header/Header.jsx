@@ -19,7 +19,7 @@ function Header() {
 
   function handleLoginClick(event) {
     event.preventDefault();
-    navigate("/login_action");
+    navigate("/");
   }
 
   function handleProfileClick(event) {
@@ -30,7 +30,6 @@ function Header() {
   useEffect(() => {
     setIsTakingLoginAction(
       location.pathname === "/" ||
-        location.pathname === "/login_action" ||
         location.pathname === "/login" ||
         location.pathname === "/signup"
         ? true

@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import "../stylesheets/LoginAction.css";
+import "../stylesheets/FirstPage.css";
 
-function LoginAction() {
+function FirstPage() {
   const navigate = useNavigate();
 
   function handleLoginClick() {
@@ -17,8 +17,19 @@ function LoginAction() {
       <p>Welcome to NC News!</p>
       <button onClick={handleLoginClick}>Login</button>
       <button onClick={handleSignupClick}>Sign Up!</button>
+      <br />
+      <br />
+      <label htmlFor="proceed">Proceed without logging in: </label>
+      <button
+        id="proceed"
+        onClick={() => {
+          navigate("/articles");
+        }}
+      >
+        Proceed
+      </button>
     </>
   );
 }
 
-export default LoginAction;
+export default FirstPage;
