@@ -39,7 +39,6 @@ function ViewArticle() {
     <div className="articleGridContainer">
       <article>
         <div className="thinRedBanner"></div>
-        <h2>Article</h2>
         <h3>{article.title}</h3>
         <p>
           Written by: <strong>{article.author}</strong>

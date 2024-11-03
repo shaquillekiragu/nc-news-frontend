@@ -21,7 +21,7 @@
   top: 2.5vh;
 }
 
-/* All article cards */
+/* ALL ARTICLE CARDS */
 
 .layerOne,
 .layerTwo,
@@ -34,11 +34,6 @@
 .layerOne {
   display: flex;
   justify-content: space-between;
-}
-
-.layerFour {
-  display: flex;
-  justify-content: space-evenly;
 }
 
 @media (max-width: 700px) {
@@ -70,6 +65,14 @@
 }
 
 @media (max-width: 850px) {
+  .layerFour {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .layerFive {
+    display: flex;
+    justify-content: space-between;
+  }
   .createdAt {
     margin-left: 2vw;
   }
@@ -79,7 +82,24 @@
   }
 }
 
-/* Top article card */
+@media (min-width: 851px) {
+  .layerFour {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+/* TOP ARTICLE CARD */
+
+@media (max-width: 850px) {
+  .topArticleCard .thumbnail {
+    margin: 0 1vw 1vw 2.5vw;
+  }
+  .topArticleCard .body {
+    font-size: 0.9rem;
+    margin: 1vw 2.5vw 0 1vw;
+  }
+}
 
 @media (min-width: 851px) {
   .topArticleCard .layerThree {
@@ -91,6 +111,13 @@
   .topArticleCard .body {
     max-width: 50%;
   }
+  .topArticleCard .thumbnail {
+    margin: 0 1vw 0 2.5vw;
+  }
+  .topArticleCard .body {
+    font-size: 0.9rem;
+    margin: 0 2.5vw 0 1vw;
+  }
 }
 
 .topArticleCard .layerFour {
@@ -101,25 +128,6 @@
 .topArticleCard .layerFive {
   display: flex;
   justify-content: space-between;
-}
-
-.topArticleCard .thumbnail {
-  margin: 0 1vw 0 2.5vw;
-}
-
-.topArticleCard .body {
-  font-size: 0.9rem;
-  margin: 0 2.5vw 0 1vw;
-}
-
-@media (max-width: 850px) {
-  .topArticleCard .thumbnail {
-    margin: 0 1vw 1vw 2.5vw;
-  }
-  .topArticleCard .body {
-    font-size: 0.9rem;
-    margin: 1vw 2.5vw 0 1vw;
-  }
 }
 
 .topArticleCard .createdAt {

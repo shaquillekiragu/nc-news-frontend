@@ -53,7 +53,7 @@ function ArticleCard({ article, index }) {
   } else if (viewportWidth > 850) {
     return (
       <Link className="articleCardLink" to={path}>
-        <section className="articleCard otherArticleCards">
+        <section className="articleCard">
           <div className="layerOne">
             <p className="author">{article.author}</p>
             <p className="topic">{article.topic}</p>
@@ -79,7 +79,7 @@ function ArticleCard({ article, index }) {
   } else {
     return (
       <Link className="articleCardLink" to={path}>
-        <section className="articleCard topArticleCard">
+        <section className="articleCard">
           <div className="layerOne">
             <p className="author">{article.author}</p>
             <p className="topic">{article.topic}</p>
