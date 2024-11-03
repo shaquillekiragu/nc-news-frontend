@@ -66,7 +66,7 @@ function Home() {
         <FilterByTopic handleTopicChange={handleTopicChange} />
         <SortArticles handleSortChange={handleSortChange} />
       </div>
-      <h2>Articles</h2>
+      <h2 className="pageTitle">Articles</h2>
       <ArticlesList articlesList={articlesList} sortQuery={sortQuery} />
     </main>
   );

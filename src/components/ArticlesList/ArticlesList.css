@@ -23,10 +23,33 @@
   }
 }
 
-@media (min-width: 850px) {
+@media (min-width: 851px) {
   .gridContainer li:first-of-type .layerThree {
     display: flex;
     justify-content: space-between;
+  }
+  .gridContainer li:first-of-type .thumbnail,
+  .body {
+    width: 50%;
+  }
+}
+
+.gridContainer li:first-of-type .thumbnail {
+  margin: 0 1vw 0 2.5vw;
+}
+
+.body {
+  font-size: 0.9rem;
+  margin: 0 2.5vw 0 1vw;
+}
+
+@media (max-width: 850px) {
+  .thumbnail {
+    margin: 0 1vw 1vw 2.5vw;
+  }
+  .body {
+    font-size: 0.9rem;
+    margin: 1vw 2.5vw 0 1vw;
   }
 }
 
