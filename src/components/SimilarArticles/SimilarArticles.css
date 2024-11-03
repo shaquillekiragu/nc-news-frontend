@@ -1,0 +1,15 @@
+.similarArticlesContainer {
+  margin: 10vh 5vw 0 0;
+}
+
+.similarArticlesContainer h3 {
+  text-align: center;
+}
+
+.similarArticlesList {
+  list-style: none;
+}
+
+.similarArticlesList li {
+  width: 80%;
+}

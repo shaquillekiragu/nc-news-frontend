@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import ArticleCard from "../ArticleCard/ArticleCard";
 import Loading from "../Loading/Loading";
 import getArticles from "../../api";
+import "./SimilarArticles.css";
 
 function SimiliarArticles({ articleTopic, selectedArticleId }) {
   const [similarArticlesList, setSimilarArticlesList] = useState([]);
@@ -37,7 +38,8 @@ function SimiliarArticles({ articleTopic, selectedArticleId }) {
     );
   }
   return (
-    <>
+    <div className="similarArticlesContainer">
+      <h3>Similar articles:</h3>
       <ul className="similarArticlesList">
         {displayedSimilarArticlesList.map((article) => {
           return (
@@ -47,7 +49,7 @@ function SimiliarArticles({ articleTopic, selectedArticleId }) {
           );
         })}
       </ul>
-    </>
+    </div>
   );
 }
 
