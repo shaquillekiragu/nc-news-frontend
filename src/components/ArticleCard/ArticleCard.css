@@ -53,6 +53,10 @@
   color: rgb(70, 64, 64);
 }
 
+.body {
+  text-wrap: wrap;
+}
+
 @media (max-width: 850px) {
   .createdAt {
     margin-left: 2vw;
