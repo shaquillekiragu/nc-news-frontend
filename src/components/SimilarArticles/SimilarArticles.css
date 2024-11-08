@@ -1,5 +1,7 @@
-.similarArticlesContainer {
-  margin: 10vh 5vw 0 0;
+@media (min-width: 1080px) {
+  .similarArticlesContainer {
+    margin: 10vh 5vw 0 0;
+  }
 }
 
 .similarArticlesContainer h3 {
@@ -8,9 +10,10 @@
 
 .similarArticlesList {
   list-style: none;
+  padding: 0;
 }
 
 .similarArticlesList li {
-  width: 80%;
-  margin: 2.5vh 0;
+  width: 60%;
+  margin: 5vh 20%;
 }

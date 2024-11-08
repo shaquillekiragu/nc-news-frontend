@@ -43,7 +43,7 @@ function SimiliarArticles({ articleTopic }) {
   }
   return (
     <div className="similarArticlesContainer">
-      <h3>Similar articles:</h3>
+      <h2>Similar articles:</h2>
       <ul className="similarArticlesList">
         {displayedSimilarArticlesList.map((article) => {
           return (

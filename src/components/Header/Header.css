@@ -55,10 +55,15 @@
   margin-bottom: 2.5vh;
 }
 
+.loginButton {
+  position: relative;
+  left: 8vw;
+}
+
 @media (min-width: 1080px) {
   .loginButton {
     position: relative;
-    left: 3vw;
+    left: 10vw;
   }
 }
 
