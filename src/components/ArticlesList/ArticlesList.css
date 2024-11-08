@@ -11,7 +11,7 @@
   margin-top: 0;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 699px) {
   .gridContainer {
     display: grid;
     grid-template-columns: 100%;
@@ -19,7 +19,7 @@
   }
 }
 
-@media (min-width: 701px) and (max-width: 1280px) {
+@media (min-width: 700px) and (max-width: 1079px) {
   .gridContainer {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -31,7 +31,7 @@
   }
 }
 
-@media (min-width: 1281px) {
+@media (min-width: 1080px) {
   .gridContainer {
     display: grid;
     grid-template-columns: 33.3% 33.3% 33.3%;

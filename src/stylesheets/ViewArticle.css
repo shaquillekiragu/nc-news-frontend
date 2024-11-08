@@ -1,14 +1,16 @@
-.articleGridContainer {
-  display: grid;
-  grid-template-columns: 33.3% 33.3% 33.3%;
-}
+@media (min-width: 1080px) {
+  .articleGridContainer {
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+  }
 
-.articleGridContainer article {
-  grid-column: 1 / 3;
-}
+  .articleGridContainer article {
+    grid-column: 1 / 3;
+  }
 
-.similarArticles {
-  grid-column: 3 / 4;
+  .similarArticles {
+    grid-column: 3 / 4;
+  }
 }
 
 .articleTitle {

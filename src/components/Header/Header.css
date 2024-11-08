@@ -55,7 +55,7 @@
   margin-bottom: 2.5vh;
 }
 
-@media (min-width: 1281px) {
+@media (min-width: 1080px) {
   .loginButton {
     position: relative;
     left: 3vw;
@@ -87,19 +87,19 @@
   color: red;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 599px) {
   .loggedOutContainer {
     gap: 20vw;
   }
 }
 
-@media (min-width: 601px) and (max-width: 1280px) {
+@media (min-width: 600px) and (max-width: 1079px) {
   .loggedOutContainer {
     gap: 15vw;
   }
 }
 
-@media (min-width: 1281px) {
+@media (min-width: 1080px) {
   .loggedOutContainer {
     gap: 8vw;
   }
