@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import "../stylesheets/FirstPage.css";
+import "../stylesheets/InitialPage.css";
 
-function FirstPage() {
+function InitialPage() {
   const navigate = useNavigate();
 
   function handleLoginClick() {
@@ -32,4 +32,4 @@ function FirstPage() {
   );
 }
 
-export default FirstPage;
+export default InitialPage;
