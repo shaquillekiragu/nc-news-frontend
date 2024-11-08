@@ -63,7 +63,15 @@
 }
 
 .profileButton {
+  text-decoration: none;
   margin-right: 15vw;
+  color: black;
+  position: relative;
+  top: 3.5vh;
+}
+
+.profileButton img {
+  height: 5vh;
 }
 
 .userStatus span {

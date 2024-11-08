@@ -22,11 +22,6 @@ function Header() {
     navigate("/");
   }
 
-  function handleProfileClick(event) {
-    event.preventDefault();
-    navigate(`/users/${user_id}`);
-  }
-
   useEffect(() => {
     setIsTakingLoginAction(
       location.pathname === "/" ||
@@ -41,17 +36,13 @@ function Header() {
     return (
       <header>
         <div className="errorHeaderContainer">
-          <Link className="headerTitleLink" to="/articles">
-            <h1 className="nc">NC</h1>
-          </Link>
+          <h1 className="nc">NC</h1>
           <p className="errorMessage">
             LOGIN STATE ERROR. PLEASE REFRESH PAGE...
           </p>
         </div>
         <div className="thickRedBanner newsContainer">
-          <Link className="headerTitleLink" to="/articles">
-            <h1 className="news">News</h1>
-          </Link>
+          <h1 className="news">News</h1>
         </div>
       </header>
     );
@@ -77,9 +68,10 @@ function Header() {
           <Link className="headerTitleLink" to="/articles">
             <h1 className="nc">NC</h1>
           </Link>
-          <button className="profileButton" onClick={handleProfileClick}>
-            Profile
-          </button>
+          <Link className="profileButton">
+            <img src="../../../images/icons/user.png" alt="Profile icon" />
+            <p>Profile</p>
+          </Link>
           <p className="userStatus">
             User logged in: <span>{authUser.username}</span>
           </p>
