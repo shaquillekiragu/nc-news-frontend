@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useAuth } from "../../contexts/UserContext";
 import { useNavigate, useLocation, Link } from "react-router-dom";
+import ProfileIcon from "../../images/icons/profileIcon.svg";
 import "./Header.css";
 
 function Header() {
@@ -69,8 +70,7 @@ function Header() {
             <h1 className="nc">NC</h1>
           </Link>
           <Link className="profileButton">
-            <img src="../../../images/icons/user.png" alt="Profile icon" />
-            <p>Profile</p>
+            <img alt="Icon" src={ProfileIcon} />
           </Link>
           <p className="userStatus">
             User logged in: <span>{authUser.username}</span>

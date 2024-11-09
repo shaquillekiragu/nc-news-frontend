@@ -28,7 +28,6 @@
 
 .loggedOutContainer,
 .takingActionContainer,
-.loggedInContainer,
 .errorHeaderContainer {
   display: flex;
   justify-content: flex-start;
@@ -39,7 +38,10 @@
 }
 
 .loggedInContainer {
-  justify-content: space-between !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: nowrap;
 }
 
 .errorHeaderContainer {
@@ -52,41 +54,77 @@
 .logoutButton,
 .errorMessage {
   margin: 0;
-  margin-bottom: 2.5vh;
+  position: relative;
+  bottom: 2.5vh;
 }
 
 .loginButton {
-  position: relative;
   left: 8vw;
 }
 
 @media (min-width: 1080px) {
   .loginButton {
-    position: relative;
     left: 10vw;
   }
 }
 
 .profileButton {
   text-decoration: none;
-  margin-right: 15vw;
   color: black;
   position: relative;
-  top: 3.5vh;
+  bottom: 0.8vh !important;
+}
+
+@media (max-width: 599px) {
+  .profileButton {
+    left: 7.5vw;
+  }
+}
+
+@media (min-width: 1080px) {
+  .profileButton {
+    right: 5vw;
+  }
+}
+
+@media (min-width: 1280px) {
+  .profileButton {
+    right: 9vw;
+  }
 }
 
 .profileButton img {
-  height: 5vh;
+  width: 10vw;
+  height: 10vh;
+  min-width: 10px;
+  min-height: 10px;
+  max-width: 45px;
+  max-height: 45px;
+}
+
+.userStatus {
+  text-wrap: nowrap;
+  position: relative;
+}
+
+@media (max-width: 599px) {
+  .userStatus {
+    visibility: hidden;
+    right: 5vw;
+  }
+  .userStatus span {
+    visibility: visible;
+  }
 }
 
 .userStatus span {
   color: var(--customRed);
 }
 
-.logoutButton {
+/* .logoutButton {
   position: relative;
   right: 5vw;
-}
+} */
 
 .errorMessage {
   color: red;
