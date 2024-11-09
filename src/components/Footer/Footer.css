@@ -1,4 +1,7 @@
 footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
   background-color: black;
   color: white;
   position: relative;
@@ -6,4 +9,10 @@ footer {
   width: 100vw;
   height: 25vh;
   margin-top: 6vh;
+}
+
+footer p {
+  position: relative;
+  bottom: 7.5vh;
+  font-size: 2vh;
 }
