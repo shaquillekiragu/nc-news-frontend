@@ -5,6 +5,11 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 0 5vw;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .title {
