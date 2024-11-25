@@ -83,6 +83,7 @@ function Header() {
           <Link className="headerTitleLink" to="/articles">
             <h1 className="news">News</h1>
           </Link>
+          <Link className="postButton">Write an article</Link>
         </div>
       </header>
     );

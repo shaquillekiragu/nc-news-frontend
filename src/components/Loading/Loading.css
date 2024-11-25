@@ -15,8 +15,8 @@
 }
 
 .loader {
-  position: relative;
-  top: -35vh;
+  position: absolute;
+  top: 15vh;
   width: 50px;
   --b: 8px;
   aspect-ratio: 1;

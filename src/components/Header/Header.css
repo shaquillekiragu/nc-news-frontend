@@ -1,7 +1,7 @@
 .newsContainer {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .headerTitleLink {
@@ -24,6 +24,15 @@
   color: white;
   position: relative;
   left: 8.5vw;
+}
+
+.postButton {
+  text-decoration: none;
+  color: white;
+  margin-right: 5vw;
+  border: 1px solid black;
+  padding: 8px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .loggedOutContainer,
