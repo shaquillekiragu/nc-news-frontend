@@ -3,11 +3,12 @@ import UserProvider from "./contexts/UserContext.jsx";
 import "./App.css";
 import Header from "./components/Header/Header.jsx";
 import InitialPage from "./pages/InitialPage.jsx";
-import LoginPage from "./pages/LoginPage";
+import LoginPage from "./pages/LoginPage.jsx";
 import SignUpPage from "./pages/SignUpPage.jsx";
 import Home from "./pages/Home.jsx";
-import ViewArticle from "./pages/ViewArticle";
-import UserProfile from "./pages/UserProfile";
+import ViewArticle from "./pages/ViewArticle.jsx";
+import PostArticle from "./pages/PostArticle.jsx";
+import UserProfile from "./pages/UserProfile.jsx";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             path="/articles/:article_id/comments"
             element={<ViewArticle />}
           />
+          <Route path="/create_article" element={<PostArticle />} />
           <Route path="/users/:user_id" element={<UserProfile />} />
         </Routes>
       </UserProvider>

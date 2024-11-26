@@ -24,17 +24,21 @@ function PostComment({ article_id }) {
       setHasPosted(true);
       console.log(postedBody, "postedBody");
       await postComment(article_id, authUser.username, postedBody);
-      setIsLoading(false);
       setHasPosted(false);
+      setIsLoading(false);
     } catch (err) {
       console.error(err);
-      setIsLoading(false);
       setHasPosted(false);
+      setIsLoading(false);
     }
   }
 
   if (isLoading && hasPosted) {
-    return <p>Posting comment...</p>;
+    return (
+      <p>
+        <em>Posting comment...</em>
+      </p>
+    );
   }
   return (
     <>
