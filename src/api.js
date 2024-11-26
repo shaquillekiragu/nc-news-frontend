@@ -12,6 +12,26 @@ export function getArticle(article_id) {
   );
 }
 
+export function postArticle(
+  title,
+  topic,
+  username,
+  body,
+  created_at,
+  votes,
+  article_img_url
+) {
+  return axios.post("https://news-webpage-project.onrender.com/api/articles", {
+    title,
+    topic,
+    username,
+    body,
+    created_at,
+    votes,
+    article_img_url,
+  });
+}
+
 export function getUsers() {
   return axios.get("https://news-webpage-project.onrender.com/api/users");
 }
