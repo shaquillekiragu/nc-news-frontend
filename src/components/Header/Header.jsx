@@ -75,7 +75,10 @@ function Header() {
           <p className="userStatus">
             User logged in: <span>{authUser.username}</span>
           </p>
-          <button className="logoutButton" onClick={handleLogoutClick}>
+          <button
+            className="logoutButton logButton"
+            onClick={handleLogoutClick}
+          >
             Log Out
           </button>
         </div>
@@ -96,7 +99,7 @@ function Header() {
           <Link className="headerTitleLink" to="/articles">
             <h1 className="nc">NC</h1>
           </Link>
-          <button className="loginButton" onClick={handleLoginClick}>
+          <button className="loginButton logButton" onClick={handleLoginClick}>
             Login
           </button>
         </div>

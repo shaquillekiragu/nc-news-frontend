@@ -41,10 +41,22 @@ body {
   left: -5vw;
 }
 
+button {
+  border: 1px solid black;
+  background-color: var(--customRed) !important;
+  color: white !important;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
 .logButton {
+  height: 5vh;
 }
 
 button:not(.logButton) {
+  height: 3vh;
 }
 
 img {
