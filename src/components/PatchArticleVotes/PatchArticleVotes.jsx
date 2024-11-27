@@ -38,6 +38,7 @@ function PatchArticleVotes({ setVoteCount, article, article_id }) {
       console.error(err);
     }
   }
+
   if (authUser.username !== article.author) {
     return (
       <>

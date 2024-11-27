@@ -41,6 +41,12 @@ body {
   left: -5vw;
 }
 
+.logButton {
+}
+
+button:not(.logButton) {
+}
+
 img {
   width: 80%;
   object-fit: contain;

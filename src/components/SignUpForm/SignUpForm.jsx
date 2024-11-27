@@ -55,7 +55,9 @@ function SignUpForm({
         />
         <br />
 
-        <button type="submit">Sign In!</button>
+        <button type="submit" className="logButton">
+          Sign In!
+        </button>
       </form>
     </>
   );

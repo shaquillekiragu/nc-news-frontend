@@ -15,16 +15,20 @@ function InitialPage() {
     <>
       <div className="thinRedBanner"></div>
       <p>Welcome to NC News!</p>
-      <button onClick={handleLoginClick}>Login</button>
-      <button onClick={handleSignupClick}>Sign Up!</button>
+      <button onClick={handleLoginClick} className="logButton">
+        Login
+      </button>
+      <button onClick={handleSignupClick} className="logButton">
+        Sign Up!
+      </button>
       <br />
       <br />
       <label htmlFor="proceed">Proceed without logging in: </label>
       <button
-        id="proceed"
         onClick={() => {
           navigate("/articles");
         }}
+        className="logButton"
       >
         Proceed
       </button>
