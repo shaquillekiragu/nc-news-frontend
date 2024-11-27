@@ -12,13 +12,7 @@ function DeleteComment({ comment }) {
   }
 
   if (!isDeleted) {
-    return (
-      <>
-        <form action="">
-          <button onClick={handleClick}>Delete comment</button>
-        </form>
-      </>
-    );
+    return <button onClick={handleClick}>Delete comment</button>;
   }
   return <p>{"Comment deleted."}</p>;
 }
